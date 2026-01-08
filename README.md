@@ -7,6 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/cuihairu/croupier-sdk-csharp/blob/main/LICENSE">
+| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
   <a href="https://dotnet.microsoft.com/download/dotnet/8.0">
@@ -98,7 +99,9 @@ dotnet add package Croupier.Sdk
 
 ```bash
 git clone https://github.com/cuihairu/croupier-sdk-csharp.git
+| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
 cd croupier-sdk-csharp
+| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
 dotnet build
 ```
 
