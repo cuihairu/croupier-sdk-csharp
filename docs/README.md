@@ -7,7 +7,7 @@ heroText: Croupier SDK for .NET 8+
 tagline: 官方 C# SDK，用于连接 Croupier 游戏后端平台
 actions:
   - text: 快速开始
-    link: /guide/quick-start.html
+    link: /guide/quick-start
     type: primary
   - text: GitHub 仓库
     link: https://github.com/cuihairu/croupier-sdk-csharp
