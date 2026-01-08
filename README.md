@@ -12,7 +12,13 @@
   <a href="https://codecov.io/gh/cuihairu/croupier-sdk-csharp">
     <img src="https://codecov.io/gh/cuihairu/croupier-sdk-csharp/branch/main/graph/badge.svg" alt="Coverage">
   </a>
-  <a href="https://github.com/cuihairu/croupier-sdk-csharp/blob/main/LICENSE">
+  <a href="https://github.com/cuihairu/croupier-sdk-csharp/actions/workflows/nightly.yml">
+    <img src="https://github.com/cuihairu/croupier-sdk-csharp/actions/workflows/nightly.yml/badge.svg" alt="Nightly Build">
+  </a>
+  <a href="https://github.com/cuihairu/croupier-sdk-csharp/releases">
+    <img src="https://img.shields.io/github/v/release/cuihairu/croupier-sdk-csharp?include_prereleases" alt="Release">
+  </a>
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
   <a href="https://dotnet.microsoft.com/download/dotnet/8.0">
