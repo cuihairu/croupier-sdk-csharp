@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/cuihairu/croupier-sdk-csharp/actions/workflows/ci.yml">
+    <img src="https://github.com/cuihairu/croupier-sdk-csharp/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+  <a href="https://codecov.io/gh/cuihairu/croupier-sdk-csharp">
+    <img src="https://codecov.io/gh/cuihairu/croupier-sdk-csharp/branch/main/graph/badge.svg" alt="Coverage">
+  </a>
   <a href="https://github.com/cuihairu/croupier-sdk-csharp/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
