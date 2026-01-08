@@ -78,6 +78,6 @@ dotnet run
 
 ## 下一步
 
-- [配置选项](./configuration.html) - 了解更多配置选项
-- [依赖注入](./dependency-injection.html) - 在 ASP.NET Core 中使用
+- [配置选项](./configuration.md) - 了解更多配置选项
+- [依赖注入](./dependency-injection.md) - 在 ASP.NET Core 中使用
 - [API 参考](../api/) - 完整的 API 文档
