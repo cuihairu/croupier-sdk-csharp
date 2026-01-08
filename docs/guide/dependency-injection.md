@@ -31,7 +31,7 @@ using (var scope = app.Services.CreateScope())
 }
 ```
 
-### 使用 IOptions<T>
+### 使用 IOptions\<T\>
 
 ```csharp
 // 配置
