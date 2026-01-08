@@ -1,0 +1,193 @@
+name: Nightly Build
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  SDK_VERSION_BASE: "0.1"
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      version_tag: ${{ steps.version.outputs.version_tag }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Generate Version
+      id: version
+      run: |
+        DATE=$(date +%Y%m%d)
+        COMMIT_SHORT=$(git rev-parse --short HEAD)
+        VERSION="${SDK_VERSION_BASE}.0-nightly.${DATE}.${COMMIT_SHORT}"
+        VERSION_TAG="nightly-${DATE}-${COMMIT_SHORT}"
+
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "version_tag=${VERSION_TAG}" >> $GITHUB_OUTPUT
+
+        echo "Generated version: ${VERSION}"
+
+  build:
+    needs: version
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact_name: linux-x64
+            runtime: linux-x64
+
+          - os: windows-latest
+            artifact_name: windows-x64
+            runtime: win-x64
+
+          - os: macos-latest
+            artifact_name: macos-x64
+            runtime: osx-x64
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build SDK
+      run: dotnet build src/Croupier.Sdk/Croupier.Sdk.csproj --configuration Release --no-restore
+
+    - name: Build examples
+      run: dotnet build examples/SimpleService/SimpleService.csproj --configuration Release --no-restore
+
+    - name: Run tests (if any)
+      run: |
+        if [ -n "$(find . -name '*.Tests.csproj')" ]; then
+          dotnet test --configuration Release --no-build --verbosity normal
+        else
+          echo "No test projects found, skipping tests"
+        fi
+      shell: bash
+
+    - name: Create NuGet package
+      run: dotnet pack src/Croupier.Sdk/Croupier.Sdk.csproj --configuration Release -p:PackageVersion=${{ needs.version.outputs.version }} --output packages
+
+    - name: Create source archive
+      run: |
+        mkdir -p dist
+        git archive --format=tar.gz --prefix=croupier-sdk-csharp/ HEAD > dist/croupier-sdk-csharp-${{ needs.version.outputs.version }}-${{ matrix.artifact_name }}.tar.gz
+      shell: bash
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: croupier-csharp-sdk-${{ matrix.artifact_name }}
+        path: |
+          packages/
+          dist/
+          src/Croupier.Sdk/bin/Release/
+          examples/SimpleService/bin/Release/
+        retention-days: 30
+
+  release:
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release_assets/
+
+      - name: Prepare Release Assets
+        run: |
+          mkdir -p release_packages
+
+          # Collect all NuGet packages
+          find release_assets/ -name '*.nupkg' -exec cp {} release_packages/ \;
+
+          # Collect all source archives
+          find release_assets/ -name '*.tar.gz' -exec cp {} release_packages/ \;
+
+          echo "📦 Release assets:"
+          ls -la release_packages/
+          echo ""
+          echo "📊 Package summary:"
+          echo "NuGet packages: $(ls release_packages/*.nupkg 2>/dev/null | wc -l)"
+          echo "Source archives: $(ls release_packages/*.tar.gz 2>/dev/null | wc -l)"
+          echo "Total packages: $(ls release_packages/*.* 2>/dev/null | wc -l)"
+
+      - name: Generate Release Notes
+        run: |
+          cat << EOF > RELEASE_NOTES.md
+          # Croupier C# SDK Nightly Build ${{ needs.version.outputs.version }}
+
+          ## 📦 Available Packages
+
+          ### NuGet Packages
+          - 📦 Croupier.Sdk: \`Croupier.Sdk.${{ needs.version.outputs.version }}.nupkg\`
+
+          ### Source Archives
+          - 🐧 Linux: \`croupier-sdk-csharp-*-${{ needs.version.outputs.version }}-linux-x64.tar.gz\`
+          - 🪟 Windows: \`croupier-sdk-csharp-*-${{ needs.version.outputs.version }}-windows-x64.tar.gz\`
+          - 🍎 macOS: \`croupier-sdk-csharp-*-${{ needs.version.outputs.version }}-macos-x64.tar.gz\`
+
+          ## 🛠️ Build Information
+          - Build Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          - Commit: ${{ github.sha }}
+          - Workflow: ${{ github.run_id }}
+          - Version Tag: ${{ needs.version.outputs.version_tag }}
+
+          ---
+          ⚠️ **This is a nightly build and may be unstable.** For stable releases, please use the official tagged releases.
+
+          ## Installation
+
+          ### Using NuGet
+          \`\`\`bash
+          # Install from nightly build (download .nupkg and use local source)
+          dotnet nuget add source https://nuget.pkg.github.com/cuihairu/index.json
+          dotnet add package Croupier.Sdk --version ${{ needs.version.outputs.version }}
+          \`\`\`
+
+          ### From Source
+          \`\`\`bash
+          # Download and extract
+          tar -xzf croupier-sdk-csharp-${{ needs.version.outputs.version }}-linux-x64.tar.gz
+          cd croupier-sdk-csharp
+
+          # Build
+          dotnet build src/Croupier.Sdk/Croupier.Sdk.csproj
+          \`\`\`
+          EOF
+
+      - name: Create Nightly Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.version.outputs.version_tag }}
+          name: "Croupier C# SDK Nightly ${{ needs.version.outputs.version }}"
+          body_path: RELEASE_NOTES.md
+          files: release_packages/*
+          draft: false
+          prerelease: true
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

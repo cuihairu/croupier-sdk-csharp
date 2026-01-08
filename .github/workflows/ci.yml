@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build SDK
+      run: dotnet build src/Croupier.Sdk/Croupier.Sdk.csproj --configuration Release --no-restore
+
+    - name: Build examples
+      run: dotnet build examples/SimpleService/SimpleService.csproj --configuration Release --no-restore
+
+    - name: Run tests (if any)
+      run: |
+        # Find and run test projects
+        if [ -n "$(find . -name '*.Tests.csproj')" ]; then
+          dotnet test --configuration Release --no-build --verbosity normal
+        else
+          echo "No test projects found, skipping tests"
+        fi
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: croupier-csharp-sdk
+        path: |
+          src/Croupier.Sdk/bin/Release/
+          examples/SimpleService/bin/Release/
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Install coverlet global tool
+      run: dotnet tool install --global coverlet.console
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Run tests with coverage (if any)
+      run: |
+        if [ -n "$(find . -name '*.Tests.csproj')" ]; then
+          dotnet test --configuration Release --no-build \
+            --collect:"XPlat Code Coverage" \
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        else
+          echo "No test projects found, creating empty coverage report"
+          mkdir -p coverage
+          echo '<?xml version="1.0"?><coverage></coverage>' > coverage/coverage.xml
+        fi
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: |
+          **/coverage.cobertura.xml
+          **/coverage.opencover.xml
+          coverage/coverage.xml
+        flags: csharp-sdk
+        fail_ci_if_error: false
