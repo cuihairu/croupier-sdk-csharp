@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+# Proto generated files (except .gitkeep)
+src/Gen/*.cs
+!src/Gen/.gitkeep
+
+# Buf cache
+.buf/

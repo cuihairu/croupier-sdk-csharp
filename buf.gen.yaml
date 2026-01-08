@@ -1,0 +1,10 @@
+version: v2
+plugins:
+  - local: grpc_csharp_plugin
+    out: src/Gen
+    opt:
+      - base_namespace=Croupier.Sdk.Gen
+  - local: protoc-gen-grpc
+    out: src/Gen
+    opt:
+      - base_namespace=Croupier.Sdk.Gen

@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-orange.svg)](https://github.com/cuihairu/croupier-sdk-csharp)
 
-Croupier SDK for .NET 6/8+ and Unity 2021+.
+Croupier SDK for .NET 8+ and Unity 2021+.
 
 ## 概述
 
@@ -18,7 +18,7 @@ Croupier C# SDK 提供：
 
 | 平台 | 支持版本 |
 |------|---------|
-| .NET | 6.0, 7.0, 8.0+ |
+| .NET | 8.0+ |
 | Unity | 2021.3+ |
 
 ## 安装
