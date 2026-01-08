@@ -7,7 +7,6 @@
 
 <p align="center">
   <a href="https://github.com/cuihairu/croupier-sdk-csharp/blob/main/LICENSE">
-| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
   <a href="https://dotnet.microsoft.com/download/dotnet/8.0">
@@ -26,7 +25,7 @@
 
 ---
 
-## 📋 目录
+## 目录
 
 - [简介](#简介)
 - [主项目](#主项目)
@@ -53,7 +52,7 @@ Croupier C# SDK 是 [Croupier](https://github.com/cuihairu/croupier) 游戏后�
 
 ## 其他语言 SDK
 
-| 语言 | 仓库 | Docs |
+| 语言 | 仓库 | 文档 |
 | --- | --- | --- |
 | Go | [croupier-sdk-go](https://github.com/cuihairu/croupier-sdk-go) | [docs](https://cuihairu.github.io/croupier-sdk-go/) |
 | C++ | [croupier-sdk-cpp](https://github.com/cuihairu/croupier-sdk-cpp) | [docs](https://cuihairu.github.io/croupier-sdk-cpp/) |
@@ -72,20 +71,19 @@ Croupier C# SDK 是 [Croupier](https://github.com/cuihairu/croupier) 游戏后�
 
 ## 核心特性
 
-- 📡 **gRPC 通信** - 基于 Grpc.Net.Client 的高效双向通信
-- 🏢 **多租户支持** - 内置 game_id/env 隔离机制
-- 📝 **函数注册** - 使用描述符和处理器注册游戏函数
-- 🔄 **异步/同步** - 支持 async/await 和同步处理器
-- 🛠️ **依赖注入** - 集成 Microsoft.Extensions.DependencyInjection
-- 📊 **日志抽象** - 支持 ILogger 和自定义日志实现
-- ⚙️ **灵活配置** - 环境变量、JSON 文件、内存配置支持
+- **gRPC 通信** - 基于 Grpc.Net.Client 的高效双向通信
+- **多租户支持** - 内置 game_id/env 隔离机制
+- **函数注册** - 使用描述符和处理器注册游戏函数
+- **异步/同步** - 支持 async/await 和同步处理器
+- **依赖注入** - 集成 Microsoft.Extensions.DependencyInjection
+- **日志抽象** - 支持 ILogger 和自定义日志实现
+- **灵活配置** - 环境变量、JSON 文件、内存配置支持
 
 ## 快速开始
 
 ### 系统要求
 
 - **.NET 8.0 SDK** 或更高版本
-- **Buf CLI** (用于生成 proto 代码)
 
 ### 安装
 
@@ -99,9 +97,7 @@ dotnet add package Croupier.Sdk
 
 ```bash
 git clone https://github.com/cuihairu/croupier-sdk-csharp.git
-| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
 cd croupier-sdk-csharp
-| Lua | [croupier-sdk-lua](https://github.com/cuihairu/croupier-sdk-lua) | - | - | [docs](https://github.com/cuihairu/croupier-sdk-cpp/blob/main/skynet/service/croupier_service.lua) | - |
 dotnet build
 ```
 
@@ -190,7 +186,7 @@ services.AddCroupier(options =>
 });
 
 var serviceProvider = services.BuildServiceProvider();
-var client = serviceProvider.GetRequiredService<Croupier.Client>();
+var client = serviceProvider.GetRequiredService<CroupierClient>();
 ```
 
 ## 配置
