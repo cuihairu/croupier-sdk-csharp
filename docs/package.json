@@ -1,0 +1,17 @@
+{
+  "name": "croupier-sdk-csharp-docs",
+  "version": "1.0.0",
+  "description": "Croupier C# SDK Documentation",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress": "^2.0.0",
+    "@vuepress/theme-default": "^2.0.0",
+    "@vuepress/plugin-search": "^2.0.0"
+  },
+  "devDependencies": {
+    "vuepress-bundler-vite": "^2.0.0"
+  }
+}
