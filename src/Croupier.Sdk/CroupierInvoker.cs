@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System.Collections.Concurrent;
+using System.Net.Http;
 using Croupier.Sdk.Logging;
 using Croupier.Sdk.Models;
 using Grpc.Net.Client;
@@ -268,23 +269,23 @@ public class CroupierInvoker : IDisposable
     {
         return _channels.GetOrAdd(_agentAddr, addr =>
         {
-            var options = new GrpcChannelOptions
+            GrpcChannelOptions options = new()
             {
                 MaxSendMessageSize = 4 * 1024 * 1024,
-                MaxReceiveMessageSize = 4 * 1024 * 1024
+                MaxReceiveMessageSize = 4 * 1024 * 1024,
             };
 
             if (_insecure)
             {
-                options.HttpHandler = new Grpc.Core.ChannelOption[]
+                options.HttpHandler = new HttpClientHandler
                 {
-                    new Grpc.Core.ChannelOption("grpc.ssl_target_name_override", addr.Split(':')[0]),
-                    new Grpc.Core.ChannelOption("grpc.default_authority", addr.Split(':')[0])
+                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
                 };
             }
 
             _logger.LogDebug("CroupierInvoker", $"Creating gRPC channel to {addr}");
-            return GrpcChannel.ForAddress(_insecure ? $"http://{addr}" : $"https://{addr}", options);
+            var scheme = _insecure ? "http" : "https";
+            return GrpcChannel.ForAddress($"{scheme}://{addr}", options);
         });
     }
 

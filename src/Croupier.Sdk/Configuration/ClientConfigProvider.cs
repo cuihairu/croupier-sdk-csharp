@@ -127,7 +127,7 @@ public class JsonFileConfigProvider : ICroupierConfigProvider
         var properties = typeof(ClientConfig).GetProperties();
         foreach (var prop in properties)
         {
-            var pattern = $"\"{prop.Name}\"\\s*:\\s*\"?([^,}\\n\"]+)\"?";
+            var pattern = $"\"{prop.Name}\"\\s*:\\s*\"?([^,}}\n\"]+)\"?";
             var match = System.Text.RegularExpressions.Regex.Match(json, pattern);
             if (match.Success)
             {

@@ -14,6 +14,7 @@
 
 using Croupier.Sdk.Configuration;
 using Croupier.Sdk.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
@@ -80,82 +81,5 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<CroupierInvoker>();
 
         return services;
-    }
-}
-
-/// <summary>
-/// 配置接口（来自 Microsoft.Extensions.Configuration）
-/// </summary>
-public interface IConfigurationSection
-{
-    string Key { get; }
-    string Value { get; }
-    string? this[string key] { get; }
-}
-
-/// <summary>
-/// 配置接口（简化版本）
-/// </summary>
-public interface IConfiguration
-{
-    IConfigurationSection GetSection(string key);
-}
-
-/// <summary>
-/// 服务集合接口
-/// </summary>
-public interface IServiceCollection
-{
-    IServiceCollection Singleton<TService>(TService implementationInstance) where TService : class;
-}
-
-/// <summary>
-/// 简化的服务集合实现
-/// </summary>
-public class ServiceCollection : IServiceCollection
-{
-    private readonly List<object> _singletons = new();
-
-    public IServiceCollection Singleton<TService>(TService implementationInstance) where TService : class
-    {
-        _singletons.Add(implementationInstance);
-        return this;
-    }
-
-    public T? GetService<T>() where T : class
-    {
-        return _singletons.OfType<T>().FirstOrDefault();
-    }
-}
-
-/// <summary>
-/// 选项包装器
-/// </summary>
-public interface IOptions<out T>
-{
-    T Value { get; }
-}
-
-/// <summary>
-/// 选项实现
-/// </summary>
-public class Options<T> : IOptions<T> where T : class, new()
-{
-    public Options(T value)
-    {
-        Value = value;
-    }
-
-    public T Value { get; }
-}
-
-/// <summary>
-/// 选项工厂
-/// </summary>
-public static class Options
-{
-    public static IOptions<T> Create<T>(T value) where T : class, new()
-    {
-        return new Options<T>(value);
     }
 }

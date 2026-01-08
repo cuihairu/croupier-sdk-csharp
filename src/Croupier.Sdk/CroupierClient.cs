@@ -13,11 +13,12 @@
 // limitations under the License.
 
 using System.Collections.Concurrent;
-using System.Channels;
+using System.Threading.Channels;
 using Croupier.Sdk.Logging;
 using Croupier.Sdk.Models;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
+using System.Net.Http;
 
 namespace Croupier.Sdk;
 
@@ -99,26 +100,23 @@ public partial class CroupierClient : IDisposable
         try
         {
             // 创建 gRPC 通道
-            var channelOptions = new GrpcChannelOptions
+            GrpcChannelOptions channelOptions = new()
             {
                 MaxSendMessageSize = _config.MaxMessageSize,
                 MaxReceiveMessageSize = _config.MaxMessageSize,
-                HttpHandler = _config.Insecure
-                    ? new Grpc.Core.ChannelOption[]
-                    {
-                        new Grpc.Core.ChannelOption("grpc.ssl_target_name_override", _config.AgentAddr.Split(':')[0]),
-                        new Grpc.Core.ChannelOption("grpc.default_authority", _config.AgentAddr.Split(':')[0])
-                    }
-                    : null
             };
 
-            // 配置 TLS
-            if (!_config.Insecure)
+            // 配置不安全连接（跳过 TLS 验证）
+            if (_config.Insecure)
             {
-                // TODO: 配置客户端证书
+                channelOptions.HttpHandler = new HttpClientHandler
+                {
+                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                };
             }
 
-            _agentChannel = GrpcChannel.ForAddress($"https://{_config.AgentAddr}", channelOptions);
+            var scheme = _config.Insecure ? "http" : "https";
+            _agentChannel = GrpcChannel.ForAddress($"{scheme}://{_config.AgentAddr}", channelOptions);
 
             // 连接并注册服务
             // TODO: 实现 gRPC 服务注册逻辑
