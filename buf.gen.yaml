@@ -1,10 +1,6 @@
+# yaml-language-server: $schema=https://buf.build/docs/configuration/v2/buf-gen-yaml
 version: v2
 plugins:
-  - local: grpc_csharp_plugin
+  - protoc_builtin: csharp
+    protoc_path: protoc
     out: src/Gen
-    opt:
-      - base_namespace=Croupier.Sdk.Gen
-  - local: protoc-gen-grpc
-    out: src/Gen
-    opt:
-      - base_namespace=Croupier.Sdk.Gen
