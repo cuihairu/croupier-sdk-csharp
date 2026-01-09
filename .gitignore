@@ -58,3 +58,8 @@ src/Gen/*.cs
 
 # Buf cache
 .buf/
+
+# Buf configuration files (generated dynamically)
+proto/buf.yaml
+buf.gen.yaml
+buf.lock
