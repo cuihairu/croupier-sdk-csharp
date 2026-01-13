@@ -28,7 +28,7 @@ namespace Croupier.Server.V1 {
             "b3VwaWVyLnNlcnZlci52MRobY3JvdXBpZXIvY29tbW9uL3YxL3VpLnByb3Rv",
             "Ghljcm91cGllci9vcHMvdjEvb3BzLnByb3RvGhtnb29nbGUvcHJvdG9idWYv",
             "ZW1wdHkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8i",
-            "vwMKEkZ1bmN0aW9uRGVzY3JpcHRvchIOCgJpZBgBIAEoCVICaWQSGAoHdmVy",
+            "ggYKEkZ1bmN0aW9uRGVzY3JpcHRvchIOCgJpZBgBIAEoCVICaWQSGAoHdmVy",
             "c2lvbhgCIAEoCVIHdmVyc2lvbhIaCghjYXRlZ29yeRgDIAEoCVIIY2F0ZWdv",
             "cnkSEgoEcmlzaxgEIAEoCVIEcmlzaxIWCgZlbnRpdHkYBSABKAlSBmVudGl0",
             "eRIcCglvcGVyYXRpb24YBiABKAlSCW9wZXJhdGlvbhIYCgdlbmFibGVkGAcg",
@@ -37,63 +37,70 @@ namespace Croupier.Server.V1 {
             "IAEoCzIcLmNyb3VwaWVyLmNvbW1vbi52MS5JMThuVGV4dFIHc3VtbWFyeRIS",
             "CgR0YWdzGBYgAygJUgR0YWdzEiwKBG1lbnUYFyABKAsyGC5jcm91cGllci5j",
             "b21tb24udjEuTWVudVIEbWVudRJECgtwZXJtaXNzaW9ucxgYIAEoCzIiLmNy",
-            "b3VwaWVyLmNvbW1vbi52MS5QZXJtaXNzaW9uU3BlY1ILcGVybWlzc2lvbnMi",
-            "pAEKDEFnZW50UHJvY2VzcxIdCgpzZXJ2aWNlX2lkGAEgASgJUglzZXJ2aWNl",
-            "SWQSEgoEYWRkchgCIAEoCVIEYWRkchIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJz",
-            "aW9uEiQKDmxhc3Rfc2Vlbl91bml4GAQgASgDUgxsYXN0U2VlblVuaXgSIQoM",
-            "ZnVuY3Rpb25faWRzGAUgAygJUgtmdW5jdGlvbklkcyKSAgoPUmVnaXN0ZXJS",
-            "ZXF1ZXN0EhkKCGFnZW50X2lkGAEgASgJUgdhZ2VudElkEhgKB3ZlcnNpb24Y",
-            "AiABKAlSB3ZlcnNpb24SRAoJZnVuY3Rpb25zGAMgAygLMiYuY3JvdXBpZXIu",
-            "c2VydmVyLnYxLkZ1bmN0aW9uRGVzY3JpcHRvclIJZnVuY3Rpb25zEhkKCHJw",
-            "Y19hZGRyGAQgASgJUgdycGNBZGRyEhcKB2dhbWVfaWQYBSABKAlSBmdhbWVJ",
-            "ZBIQCgNlbnYYBiABKAlSA2VudhI+Cglwcm9jZXNzZXMYByADKAsyIC5jcm91",
-            "cGllci5zZXJ2ZXIudjEuQWdlbnRQcm9jZXNzUglwcm9jZXNzZXMiTgoQUmVn",
-            "aXN0ZXJSZXNwb25zZRIdCgpzZXNzaW9uX2lkGAEgASgJUglzZXNzaW9uSWQS",
-            "GwoJZXhwaXJlX2F0GAIgASgDUghleHBpcmVBdCJMChBIZWFydGJlYXRSZXF1",
-            "ZXN0EhkKCGFnZW50X2lkGAEgASgJUgdhZ2VudElkEh0KCnNlc3Npb25faWQY",
-            "AiABKAlSCXNlc3Npb25JZCITChFIZWFydGJlYXRSZXNwb25zZSJeCgxQcm92",
-            "aWRlck1ldGESDgoCaWQYASABKAlSAmlkEhgKB3ZlcnNpb24YAiABKAlSB3Zl",
-            "cnNpb24SEgoEbGFuZxgDIAEoCVIEbGFuZxIQCgNzZGsYBCABKAlSA3NkayKF",
-            "AQobUmVnaXN0ZXJDYXBhYmlsaXRpZXNSZXF1ZXN0EjwKCHByb3ZpZGVyGAEg",
-            "ASgLMiAuY3JvdXBpZXIuc2VydmVyLnYxLlByb3ZpZGVyTWV0YVIIcHJvdmlk",
-            "ZXISKAoQbWFuaWZlc3RfanNvbl9nehgCIAEoDFIObWFuaWZlc3RKc29uR3oi",
-            "HgocUmVnaXN0ZXJDYXBhYmlsaXRpZXNSZXNwb25zZSJkChxMaXN0RnVuY3Rp",
-            "b25zU3VtbWFyeVJlc3BvbnNlEkQKCWZ1bmN0aW9ucxgBIAMoCzImLmNyb3Vw",
-            "aWVyLnNlcnZlci52MS5GdW5jdGlvbkRlc2NyaXB0b3JSCWZ1bmN0aW9ucyI2",
-            "ChlHZXRBZ2VudFN5c3RlbUluZm9SZXF1ZXN0EhkKCGFnZW50X2lkGAEgASgJ",
-            "UgdhZ2VudElkIjYKGUxpc3RBZ2VudFByb2Nlc3Nlc1JlcXVlc3QSGQoIYWdl",
-            "bnRfaWQYASABKAlSB2FnZW50SWQiegoTUXVlcnlNZXRyaWNzUmVxdWVzdBIb",
-            "CglhZ2VudF9pZHMYASADKAlSCGFnZW50SWRzEjAKBXNpbmNlGAIgASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIFc2luY2USFAoFbGltaXQYAyAB",
-            "KA1SBWxpbWl0IlcKFFF1ZXJ5TWV0cmljc1Jlc3BvbnNlEj8KB2VudHJpZXMY",
-            "ASADKAsyJS5jcm91cGllci5zZXJ2ZXIudjEuQWdlbnRNZXRyaWNzRW50cnlS",
-            "B2VudHJpZXMiogEKEUFnZW50TWV0cmljc0VudHJ5EhkKCGFnZW50X2lkGAEg",
-            "ASgJUgdhZ2VudElkEjgKCXRpbWVzdGFtcBgCIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXBSCXRpbWVzdGFtcBI4CgdtZXRyaWNzGAMgASgLMh4u",
-            "Y3JvdXBpZXIub3BzLnYxLk1ldHJpY3NSZXBvcnRSB21ldHJpY3My0AUKDkNv",
-            "bnRyb2xTZXJ2aWNlEmAKFExpc3RGdW5jdGlvbnNTdW1tYXJ5EhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5GjAuY3JvdXBpZXIuc2VydmVyLnYxLkxpc3RGdW5j",
-            "dGlvbnNTdW1tYXJ5UmVzcG9uc2USVQoIUmVnaXN0ZXISIy5jcm91cGllci5z",
-            "ZXJ2ZXIudjEuUmVnaXN0ZXJSZXF1ZXN0GiQuY3JvdXBpZXIuc2VydmVyLnYx",
-            "LlJlZ2lzdGVyUmVzcG9uc2USWAoJSGVhcnRiZWF0EiQuY3JvdXBpZXIuc2Vy",
-            "dmVyLnYxLkhlYXJ0YmVhdFJlcXVlc3QaJS5jcm91cGllci5zZXJ2ZXIudjEu",
-            "SGVhcnRiZWF0UmVzcG9uc2USeQoUUmVnaXN0ZXJDYXBhYmlsaXRpZXMSLy5j",
-            "cm91cGllci5zZXJ2ZXIudjEuUmVnaXN0ZXJDYXBhYmlsaXRpZXNSZXF1ZXN0",
-            "GjAuY3JvdXBpZXIuc2VydmVyLnYxLlJlZ2lzdGVyQ2FwYWJpbGl0aWVzUmVz",
-            "cG9uc2USYAoSR2V0QWdlbnRTeXN0ZW1JbmZvEi0uY3JvdXBpZXIuc2VydmVy",
-            "LnYxLkdldEFnZW50U3lzdGVtSW5mb1JlcXVlc3QaGy5jcm91cGllci5vcHMu",
-            "djEuU3lzdGVtSW5mbxJrChJMaXN0QWdlbnRQcm9jZXNzZXMSLS5jcm91cGll",
-            "ci5zZXJ2ZXIudjEuTGlzdEFnZW50UHJvY2Vzc2VzUmVxdWVzdBomLmNyb3Vw",
-            "aWVyLm9wcy52MS5MaXN0UHJvY2Vzc2VzUmVzcG9uc2USYQoMUXVlcnlNZXRy",
-            "aWNzEicuY3JvdXBpZXIuc2VydmVyLnYxLlF1ZXJ5TWV0cmljc1JlcXVlc3Qa",
-            "KC5jcm91cGllci5zZXJ2ZXIudjEuUXVlcnlNZXRyaWNzUmVzcG9uc2VCagol",
-            "aW8uZ2l0aHViLmN1aWhhaXJ1LmNyb3VwaWVyLnNlcnZlci52MVABWj9naXRo",
-            "dWIuY29tL2N1aWhhaXJ1L2Nyb3VwaWVyL3BrZy9wYi9jcm91cGllci9zZXJ2",
-            "ZXIvdjE7c2VydmVydjFiBnByb3RvMw=="));
+            "b3VwaWVyLmNvbW1vbi52MS5QZXJtaXNzaW9uU3BlY1ILcGVybWlzc2lvbnMS",
+            "IQoMaW5wdXRfc2NoZW1hGB4gASgJUgtpbnB1dFNjaGVtYRIjCg1vdXRwdXRf",
+            "c2NoZW1hGB8gASgJUgxvdXRwdXRTY2hlbWESJgoPeF9yZW5kZXJfc2NoZW1h",
+            "GCAgASgJUg14UmVuZGVyU2NoZW1hEisKEnhfcmVuZGVyX3VpX3NjaGVtYRgh",
+            "IAEoCVIPeFJlbmRlclVpU2NoZW1hElUKE2RlZmF1bHRfZm9ybV9jb25maWcY",
+            "IiABKAsyJS5jcm91cGllci5jb21tb24udjEuWFJlbmRlckZvcm1Db25maWdS",
+            "EWRlZmF1bHRGb3JtQ29uZmlnEk0KDnJvdXRlX2Rpc3BsYXlzGCMgAygLMiYu",
+            "Y3JvdXBpZXIuY29tbW9uLnYxLlJvdXRlRGlzcGxheUNvbmZpZ1INcm91dGVE",
+            "aXNwbGF5cyKkAQoMQWdlbnRQcm9jZXNzEh0KCnNlcnZpY2VfaWQYASABKAlS",
+            "CXNlcnZpY2VJZBISCgRhZGRyGAIgASgJUgRhZGRyEhgKB3ZlcnNpb24YAyAB",
+            "KAlSB3ZlcnNpb24SJAoObGFzdF9zZWVuX3VuaXgYBCABKANSDGxhc3RTZWVu",
+            "VW5peBIhCgxmdW5jdGlvbl9pZHMYBSADKAlSC2Z1bmN0aW9uSWRzIpICCg9S",
+            "ZWdpc3RlclJlcXVlc3QSGQoIYWdlbnRfaWQYASABKAlSB2FnZW50SWQSGAoH",
+            "dmVyc2lvbhgCIAEoCVIHdmVyc2lvbhJECglmdW5jdGlvbnMYAyADKAsyJi5j",
+            "cm91cGllci5zZXJ2ZXIudjEuRnVuY3Rpb25EZXNjcmlwdG9yUglmdW5jdGlv",
+            "bnMSGQoIcnBjX2FkZHIYBCABKAlSB3JwY0FkZHISFwoHZ2FtZV9pZBgFIAEo",
+            "CVIGZ2FtZUlkEhAKA2VudhgGIAEoCVIDZW52Ej4KCXByb2Nlc3NlcxgHIAMo",
+            "CzIgLmNyb3VwaWVyLnNlcnZlci52MS5BZ2VudFByb2Nlc3NSCXByb2Nlc3Nl",
+            "cyJOChBSZWdpc3RlclJlc3BvbnNlEh0KCnNlc3Npb25faWQYASABKAlSCXNl",
+            "c3Npb25JZBIbCglleHBpcmVfYXQYAiABKANSCGV4cGlyZUF0IkwKEEhlYXJ0",
+            "YmVhdFJlcXVlc3QSGQoIYWdlbnRfaWQYASABKAlSB2FnZW50SWQSHQoKc2Vz",
+            "c2lvbl9pZBgCIAEoCVIJc2Vzc2lvbklkIhMKEUhlYXJ0YmVhdFJlc3BvbnNl",
+            "Il4KDFByb3ZpZGVyTWV0YRIOCgJpZBgBIAEoCVICaWQSGAoHdmVyc2lvbhgC",
+            "IAEoCVIHdmVyc2lvbhISCgRsYW5nGAMgASgJUgRsYW5nEhAKA3NkaxgEIAEo",
+            "CVIDc2RrIoUBChtSZWdpc3RlckNhcGFiaWxpdGllc1JlcXVlc3QSPAoIcHJv",
+            "dmlkZXIYASABKAsyIC5jcm91cGllci5zZXJ2ZXIudjEuUHJvdmlkZXJNZXRh",
+            "Ughwcm92aWRlchIoChBtYW5pZmVzdF9qc29uX2d6GAIgASgMUg5tYW5pZmVz",
+            "dEpzb25HeiIeChxSZWdpc3RlckNhcGFiaWxpdGllc1Jlc3BvbnNlImQKHExp",
+            "c3RGdW5jdGlvbnNTdW1tYXJ5UmVzcG9uc2USRAoJZnVuY3Rpb25zGAEgAygL",
+            "MiYuY3JvdXBpZXIuc2VydmVyLnYxLkZ1bmN0aW9uRGVzY3JpcHRvclIJZnVu",
+            "Y3Rpb25zIjYKGUdldEFnZW50U3lzdGVtSW5mb1JlcXVlc3QSGQoIYWdlbnRf",
+            "aWQYASABKAlSB2FnZW50SWQiNgoZTGlzdEFnZW50UHJvY2Vzc2VzUmVxdWVz",
+            "dBIZCghhZ2VudF9pZBgBIAEoCVIHYWdlbnRJZCJ6ChNRdWVyeU1ldHJpY3NS",
+            "ZXF1ZXN0EhsKCWFnZW50X2lkcxgBIAMoCVIIYWdlbnRJZHMSMAoFc2luY2UY",
+            "AiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgVzaW5jZRIUCgVs",
+            "aW1pdBgDIAEoDVIFbGltaXQiVwoUUXVlcnlNZXRyaWNzUmVzcG9uc2USPwoH",
+            "ZW50cmllcxgBIAMoCzIlLmNyb3VwaWVyLnNlcnZlci52MS5BZ2VudE1ldHJp",
+            "Y3NFbnRyeVIHZW50cmllcyKiAQoRQWdlbnRNZXRyaWNzRW50cnkSGQoIYWdl",
+            "bnRfaWQYASABKAlSB2FnZW50SWQSOAoJdGltZXN0YW1wGAIgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0YW1wEjgKB21ldHJpY3MY",
+            "AyABKAsyHi5jcm91cGllci5vcHMudjEuTWV0cmljc1JlcG9ydFIHbWV0cmlj",
+            "czLQBQoOQ29udHJvbFNlcnZpY2USYAoUTGlzdEZ1bmN0aW9uc1N1bW1hcnkS",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkaMC5jcm91cGllci5zZXJ2ZXIudjEu",
+            "TGlzdEZ1bmN0aW9uc1N1bW1hcnlSZXNwb25zZRJVCghSZWdpc3RlchIjLmNy",
+            "b3VwaWVyLnNlcnZlci52MS5SZWdpc3RlclJlcXVlc3QaJC5jcm91cGllci5z",
+            "ZXJ2ZXIudjEuUmVnaXN0ZXJSZXNwb25zZRJYCglIZWFydGJlYXQSJC5jcm91",
+            "cGllci5zZXJ2ZXIudjEuSGVhcnRiZWF0UmVxdWVzdBolLmNyb3VwaWVyLnNl",
+            "cnZlci52MS5IZWFydGJlYXRSZXNwb25zZRJ5ChRSZWdpc3RlckNhcGFiaWxp",
+            "dGllcxIvLmNyb3VwaWVyLnNlcnZlci52MS5SZWdpc3RlckNhcGFiaWxpdGll",
+            "c1JlcXVlc3QaMC5jcm91cGllci5zZXJ2ZXIudjEuUmVnaXN0ZXJDYXBhYmls",
+            "aXRpZXNSZXNwb25zZRJgChJHZXRBZ2VudFN5c3RlbUluZm8SLS5jcm91cGll",
+            "ci5zZXJ2ZXIudjEuR2V0QWdlbnRTeXN0ZW1JbmZvUmVxdWVzdBobLmNyb3Vw",
+            "aWVyLm9wcy52MS5TeXN0ZW1JbmZvEmsKEkxpc3RBZ2VudFByb2Nlc3NlcxIt",
+            "LmNyb3VwaWVyLnNlcnZlci52MS5MaXN0QWdlbnRQcm9jZXNzZXNSZXF1ZXN0",
+            "GiYuY3JvdXBpZXIub3BzLnYxLkxpc3RQcm9jZXNzZXNSZXNwb25zZRJhCgxR",
+            "dWVyeU1ldHJpY3MSJy5jcm91cGllci5zZXJ2ZXIudjEuUXVlcnlNZXRyaWNz",
+            "UmVxdWVzdBooLmNyb3VwaWVyLnNlcnZlci52MS5RdWVyeU1ldHJpY3NSZXNw",
+            "b25zZUJqCiVpby5naXRodWIuY3VpaGFpcnUuY3JvdXBpZXIuc2VydmVyLnYx",
+            "UAFaP2dpdGh1Yi5jb20vY3VpaGFpcnUvY3JvdXBpZXIvcGtnL3BiL2Nyb3Vw",
+            "aWVyL3NlcnZlci92MTtzZXJ2ZXJ2MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Croupier.Common.V1.UiReflection.Descriptor, global::Croupier.Ops.V1.OpsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.FunctionDescriptor), global::Croupier.Server.V1.FunctionDescriptor.Parser, new[]{ "Id", "Version", "Category", "Risk", "Entity", "Operation", "Enabled", "DisplayName", "Summary", "Tags", "Menu", "Permissions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.FunctionDescriptor), global::Croupier.Server.V1.FunctionDescriptor.Parser, new[]{ "Id", "Version", "Category", "Risk", "Entity", "Operation", "Enabled", "DisplayName", "Summary", "Tags", "Menu", "Permissions", "InputSchema", "OutputSchema", "XRenderSchema", "XRenderUiSchema", "DefaultFormConfig", "RouteDisplays" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.AgentProcess), global::Croupier.Server.V1.AgentProcess.Parser, new[]{ "ServiceId", "Addr", "Version", "LastSeenUnix", "FunctionIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.RegisterRequest), global::Croupier.Server.V1.RegisterRequest.Parser, new[]{ "AgentId", "Version", "Functions", "RpcAddr", "GameId", "Env", "Processes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.RegisterResponse), global::Croupier.Server.V1.RegisterResponse.Parser, new[]{ "SessionId", "ExpireAt" }, null, null, null, null),
@@ -164,6 +171,12 @@ namespace Croupier.Server.V1 {
       tags_ = other.tags_.Clone();
       menu_ = other.menu_ != null ? other.menu_.Clone() : null;
       permissions_ = other.permissions_ != null ? other.permissions_.Clone() : null;
+      inputSchema_ = other.inputSchema_;
+      outputSchema_ = other.outputSchema_;
+      xRenderSchema_ = other.xRenderSchema_;
+      xRenderUiSchema_ = other.xRenderUiSchema_;
+      defaultFormConfig_ = other.defaultFormConfig_ != null ? other.defaultFormConfig_.Clone() : null;
+      routeDisplays_ = other.routeDisplays_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -340,6 +353,95 @@ namespace Croupier.Server.V1 {
       }
     }
 
+    /// <summary>Field number for the "input_schema" field.</summary>
+    public const int InputSchemaFieldNumber = 30;
+    private string inputSchema_ = "";
+    /// <summary>
+    /// OpenAPI 3.0.3 Schema fields (JSON Schema format)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InputSchema {
+      get { return inputSchema_; }
+      set {
+        inputSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "output_schema" field.</summary>
+    public const int OutputSchemaFieldNumber = 31;
+    private string outputSchema_ = "";
+    /// <summary>
+    /// JSON Schema for response body
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OutputSchema {
+      get { return outputSchema_; }
+      set {
+        outputSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "x_render_schema" field.</summary>
+    public const int XRenderSchemaFieldNumber = 32;
+    private string xRenderSchema_ = "";
+    /// <summary>
+    /// x-render extension for UI control
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string XRenderSchema {
+      get { return xRenderSchema_; }
+      set {
+        xRenderSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "x_render_ui_schema" field.</summary>
+    public const int XRenderUiSchemaFieldNumber = 33;
+    private string xRenderUiSchema_ = "";
+    /// <summary>
+    /// XRender UI schema for widget configuration (JSON string)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string XRenderUiSchema {
+      get { return xRenderUiSchema_; }
+      set {
+        xRenderUiSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "default_form_config" field.</summary>
+    public const int DefaultFormConfigFieldNumber = 34;
+    private global::Croupier.Common.V1.XRenderFormConfig defaultFormConfig_;
+    /// <summary>
+    /// Route-specific display configurations (structured, for Server processing)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Croupier.Common.V1.XRenderFormConfig DefaultFormConfig {
+      get { return defaultFormConfig_; }
+      set {
+        defaultFormConfig_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "route_displays" field.</summary>
+    public const int RouteDisplaysFieldNumber = 35;
+    private static readonly pb::FieldCodec<global::Croupier.Common.V1.RouteDisplayConfig> _repeated_routeDisplays_codec
+        = pb::FieldCodec.ForMessage(282, global::Croupier.Common.V1.RouteDisplayConfig.Parser);
+    private readonly pbc::RepeatedField<global::Croupier.Common.V1.RouteDisplayConfig> routeDisplays_ = new pbc::RepeatedField<global::Croupier.Common.V1.RouteDisplayConfig>();
+    /// <summary>
+    /// Route-specific overrides
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Croupier.Common.V1.RouteDisplayConfig> RouteDisplays {
+      get { return routeDisplays_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -367,6 +469,12 @@ namespace Croupier.Server.V1 {
       if(!tags_.Equals(other.tags_)) return false;
       if (!object.Equals(Menu, other.Menu)) return false;
       if (!object.Equals(Permissions, other.Permissions)) return false;
+      if (InputSchema != other.InputSchema) return false;
+      if (OutputSchema != other.OutputSchema) return false;
+      if (XRenderSchema != other.XRenderSchema) return false;
+      if (XRenderUiSchema != other.XRenderUiSchema) return false;
+      if (!object.Equals(DefaultFormConfig, other.DefaultFormConfig)) return false;
+      if(!routeDisplays_.Equals(other.routeDisplays_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -386,6 +494,12 @@ namespace Croupier.Server.V1 {
       hash ^= tags_.GetHashCode();
       if (menu_ != null) hash ^= Menu.GetHashCode();
       if (permissions_ != null) hash ^= Permissions.GetHashCode();
+      if (InputSchema.Length != 0) hash ^= InputSchema.GetHashCode();
+      if (OutputSchema.Length != 0) hash ^= OutputSchema.GetHashCode();
+      if (XRenderSchema.Length != 0) hash ^= XRenderSchema.GetHashCode();
+      if (XRenderUiSchema.Length != 0) hash ^= XRenderUiSchema.GetHashCode();
+      if (defaultFormConfig_ != null) hash ^= DefaultFormConfig.GetHashCode();
+      hash ^= routeDisplays_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -449,6 +563,27 @@ namespace Croupier.Server.V1 {
         output.WriteRawTag(194, 1);
         output.WriteMessage(Permissions);
       }
+      if (InputSchema.Length != 0) {
+        output.WriteRawTag(242, 1);
+        output.WriteString(InputSchema);
+      }
+      if (OutputSchema.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(OutputSchema);
+      }
+      if (XRenderSchema.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(XRenderSchema);
+      }
+      if (XRenderUiSchema.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(XRenderUiSchema);
+      }
+      if (defaultFormConfig_ != null) {
+        output.WriteRawTag(146, 2);
+        output.WriteMessage(DefaultFormConfig);
+      }
+      routeDisplays_.WriteTo(output, _repeated_routeDisplays_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -504,6 +639,27 @@ namespace Croupier.Server.V1 {
         output.WriteRawTag(194, 1);
         output.WriteMessage(Permissions);
       }
+      if (InputSchema.Length != 0) {
+        output.WriteRawTag(242, 1);
+        output.WriteString(InputSchema);
+      }
+      if (OutputSchema.Length != 0) {
+        output.WriteRawTag(250, 1);
+        output.WriteString(OutputSchema);
+      }
+      if (XRenderSchema.Length != 0) {
+        output.WriteRawTag(130, 2);
+        output.WriteString(XRenderSchema);
+      }
+      if (XRenderUiSchema.Length != 0) {
+        output.WriteRawTag(138, 2);
+        output.WriteString(XRenderUiSchema);
+      }
+      if (defaultFormConfig_ != null) {
+        output.WriteRawTag(146, 2);
+        output.WriteMessage(DefaultFormConfig);
+      }
+      routeDisplays_.WriteTo(ref output, _repeated_routeDisplays_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -548,6 +704,22 @@ namespace Croupier.Server.V1 {
       if (permissions_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Permissions);
       }
+      if (InputSchema.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(InputSchema);
+      }
+      if (OutputSchema.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(OutputSchema);
+      }
+      if (XRenderSchema.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(XRenderSchema);
+      }
+      if (XRenderUiSchema.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(XRenderUiSchema);
+      }
+      if (defaultFormConfig_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DefaultFormConfig);
+      }
+      size += routeDisplays_.CalculateSize(_repeated_routeDisplays_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -606,6 +778,25 @@ namespace Croupier.Server.V1 {
         }
         Permissions.MergeFrom(other.Permissions);
       }
+      if (other.InputSchema.Length != 0) {
+        InputSchema = other.InputSchema;
+      }
+      if (other.OutputSchema.Length != 0) {
+        OutputSchema = other.OutputSchema;
+      }
+      if (other.XRenderSchema.Length != 0) {
+        XRenderSchema = other.XRenderSchema;
+      }
+      if (other.XRenderUiSchema.Length != 0) {
+        XRenderUiSchema = other.XRenderUiSchema;
+      }
+      if (other.defaultFormConfig_ != null) {
+        if (defaultFormConfig_ == null) {
+          DefaultFormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+        }
+        DefaultFormConfig.MergeFrom(other.DefaultFormConfig);
+      }
+      routeDisplays_.Add(other.routeDisplays_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -685,6 +876,33 @@ namespace Croupier.Server.V1 {
             input.ReadMessage(Permissions);
             break;
           }
+          case 242: {
+            InputSchema = input.ReadString();
+            break;
+          }
+          case 250: {
+            OutputSchema = input.ReadString();
+            break;
+          }
+          case 258: {
+            XRenderSchema = input.ReadString();
+            break;
+          }
+          case 266: {
+            XRenderUiSchema = input.ReadString();
+            break;
+          }
+          case 274: {
+            if (defaultFormConfig_ == null) {
+              DefaultFormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+            }
+            input.ReadMessage(DefaultFormConfig);
+            break;
+          }
+          case 282: {
+            routeDisplays_.AddEntriesFrom(input, _repeated_routeDisplays_codec);
+            break;
+          }
         }
       }
     #endif
@@ -762,6 +980,33 @@ namespace Croupier.Server.V1 {
               Permissions = new global::Croupier.Common.V1.PermissionSpec();
             }
             input.ReadMessage(Permissions);
+            break;
+          }
+          case 242: {
+            InputSchema = input.ReadString();
+            break;
+          }
+          case 250: {
+            OutputSchema = input.ReadString();
+            break;
+          }
+          case 258: {
+            XRenderSchema = input.ReadString();
+            break;
+          }
+          case 266: {
+            XRenderUiSchema = input.ReadString();
+            break;
+          }
+          case 274: {
+            if (defaultFormConfig_ == null) {
+              DefaultFormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+            }
+            input.ReadMessage(DefaultFormConfig);
+            break;
+          }
+          case 282: {
+            routeDisplays_.AddEntriesFrom(ref input, _repeated_routeDisplays_codec);
             break;
           }
         }

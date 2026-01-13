@@ -36,17 +36,42 @@ namespace Croupier.Common.V1 {
             "cGllci5jb21tb24udjEuUm9sZUJpbmRpbmdSCGRlZmF1bHRzEkcKB2kxOG5f",
             "emgYBCADKAsyLi5jcm91cGllci5jb21tb24udjEuUGVybWlzc2lvblNwZWMu",
             "STE4blpoRW50cnlSBmkxOG5aaBo5CgtJMThuWmhFbnRyeRIQCgNrZXkYASAB",
-            "KAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBQmoKJWlvLmdpdGh1",
-            "Yi5jdWloYWlydS5jcm91cGllci5jb21tb24udjFQAVo/Z2l0aHViLmNvbS9j",
-            "dWloYWlydS9jcm91cGllci9wa2cvcGIvY3JvdXBpZXIvY29tbW9uL3YxO2Nv",
-            "bW1vbnYxYgZwcm90bzM="));
+            "KAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBIsICCg1YUmVuZGVy",
+            "V2lkZ2V0EhYKBndpZGdldBgBIAEoCVIGd2lkZ2V0EhQKBWxhYmVsGAIgASgJ",
+            "UgVsYWJlbBIgCgtwbGFjZWhvbGRlchgDIAEoCVILcGxhY2Vob2xkZXISGgoI",
+            "ZGlzYWJsZWQYBCABKAhSCGRpc2FibGVkEhsKCXJlYWRfb25seRgFIAEoCFII",
+            "cmVhZE9ubHkSFgoGaGlkZGVuGAYgASgIUgZoaWRkZW4SEgoEc3BhbhgHIAEo",
+            "BVIEc3BhbhJCCgVwcm9wcxgIIAMoCzIsLmNyb3VwaWVyLmNvbW1vbi52MS5Y",
+            "UmVuZGVyV2lkZ2V0LlByb3BzRW50cnlSBXByb3BzGjgKClByb3BzRW50cnkS",
+            "EAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4ASL2",
+            "AgoRWFJlbmRlckZvcm1Db25maWcSHwoLbGF5b3V0X3R5cGUYASABKAlSCmxh",
+            "eW91dFR5cGUSFgoGY29sdW1uGAIgASgFUgZjb2x1bW4SHwoLbGFiZWxfYWxp",
+            "Z24YAyABKAlSCmxhYmVsQWxpZ24SHwoLbGFiZWxfd2lkdGgYBCABKAVSCmxh",
+            "YmVsV2lkdGgSFAoFY29sb24YBSABKAhSBWNvbG9uEkwKB3dpZGdldHMYBiAD",
+            "KAsyMi5jcm91cGllci5jb21tb24udjEuWFJlbmRlckZvcm1Db25maWcuV2lk",
+            "Z2V0c0VudHJ5Ugd3aWRnZXRzEiMKDWRpc3BsYXlfb3JkZXIYByADKAlSDGRp",
+            "c3BsYXlPcmRlchpdCgxXaWRnZXRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkS",
+            "NwoFdmFsdWUYAiABKAsyIS5jcm91cGllci5jb21tb24udjEuWFJlbmRlcldp",
+            "ZGdldFIFdmFsdWU6AjgBIqACChJSb3V0ZURpc3BsYXlDb25maWcSIwoNcm91",
+            "dGVfcGF0dGVybhgBIAEoCVIMcm91dGVQYXR0ZXJuEkYKC2Zvcm1fY29uZmln",
+            "GAIgASgLMiUuY3JvdXBpZXIuY29tbW9uLnYxLlhSZW5kZXJGb3JtQ29uZmln",
+            "Ugpmb3JtQ29uZmlnEiMKDWhpZGRlbl9maWVsZHMYAyADKAlSDGhpZGRlbkZp",
+            "ZWxkcxInCg9yZXF1aXJlZF9maWVsZHMYBCADKAlSDnJlcXVpcmVkRmllbGRz",
+            "EiwKEnN1Ym1pdF9idXR0b25fdGV4dBgFIAEoCVIQc3VibWl0QnV0dG9uVGV4",
+            "dBIhCgxjb21wYWN0X21vZGUYBiABKAhSC2NvbXBhY3RNb2RlQmoKJWlvLmdp",
+            "dGh1Yi5jdWloYWlydS5jcm91cGllci5jb21tb24udjFQAVo/Z2l0aHViLmNv",
+            "bS9jdWloYWlydS9jcm91cGllci9wa2cvcGIvY3JvdXBpZXIvY29tbW9uL3Yx",
+            "O2NvbW1vbnYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.I18nText), global::Croupier.Common.V1.I18nText.Parser, new[]{ "En", "Zh" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.Menu), global::Croupier.Common.V1.Menu.Parser, new[]{ "Section", "Group", "Path", "Order", "Icon", "Badge", "Hidden" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.RoleBinding), global::Croupier.Common.V1.RoleBinding.Parser, new[]{ "Role", "Verbs" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.PermissionSpec), global::Croupier.Common.V1.PermissionSpec.Parser, new[]{ "Verbs", "Scopes", "Defaults", "I18NZh" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.PermissionSpec), global::Croupier.Common.V1.PermissionSpec.Parser, new[]{ "Verbs", "Scopes", "Defaults", "I18NZh" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.XRenderWidget), global::Croupier.Common.V1.XRenderWidget.Parser, new[]{ "Widget", "Label", "Placeholder", "Disabled", "ReadOnly", "Hidden", "Span", "Props" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.XRenderFormConfig), global::Croupier.Common.V1.XRenderFormConfig.Parser, new[]{ "LayoutType", "Column", "LabelAlign", "LabelWidth", "Colon", "Widgets", "DisplayOrder" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Common.V1.RouteDisplayConfig), global::Croupier.Common.V1.RouteDisplayConfig.Parser, new[]{ "RoutePattern", "FormConfig", "HiddenFields", "RequiredFields", "SubmitButtonText", "CompactMode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1236,6 +1261,1292 @@ namespace Croupier.Common.V1 {
           }
           case 34: {
             i18NZh_.AddEntriesFrom(ref input, _map_i18NZh_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// XRender widget configuration for a field.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class XRenderWidget : pb::IMessage<XRenderWidget>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<XRenderWidget> _parser = new pb::MessageParser<XRenderWidget>(() => new XRenderWidget());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<XRenderWidget> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Croupier.Common.V1.UiReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderWidget() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderWidget(XRenderWidget other) : this() {
+      widget_ = other.widget_;
+      label_ = other.label_;
+      placeholder_ = other.placeholder_;
+      disabled_ = other.disabled_;
+      readOnly_ = other.readOnly_;
+      hidden_ = other.hidden_;
+      span_ = other.span_;
+      props_ = other.props_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderWidget Clone() {
+      return new XRenderWidget(this);
+    }
+
+    /// <summary>Field number for the "widget" field.</summary>
+    public const int WidgetFieldNumber = 1;
+    private string widget_ = "";
+    /// <summary>
+    /// Widget type: input/textarea/number/select/checkbox/radio/switch/date/time/json-editor/file
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Widget {
+      get { return widget_; }
+      set {
+        widget_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "label" field.</summary>
+    public const int LabelFieldNumber = 2;
+    private string label_ = "";
+    /// <summary>
+    /// Display label (supports i18n key)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Label {
+      get { return label_; }
+      set {
+        label_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "placeholder" field.</summary>
+    public const int PlaceholderFieldNumber = 3;
+    private string placeholder_ = "";
+    /// <summary>
+    /// Placeholder text
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Placeholder {
+      get { return placeholder_; }
+      set {
+        placeholder_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "disabled" field.</summary>
+    public const int DisabledFieldNumber = 4;
+    private bool disabled_;
+    /// <summary>
+    /// Whether the field is disabled
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Disabled {
+      get { return disabled_; }
+      set {
+        disabled_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "read_only" field.</summary>
+    public const int ReadOnlyFieldNumber = 5;
+    private bool readOnly_;
+    /// <summary>
+    /// Whether the field is read-only
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool ReadOnly {
+      get { return readOnly_; }
+      set {
+        readOnly_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hidden" field.</summary>
+    public const int HiddenFieldNumber = 6;
+    private bool hidden_;
+    /// <summary>
+    /// Whether the field is hidden
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Hidden {
+      get { return hidden_; }
+      set {
+        hidden_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "span" field.</summary>
+    public const int SpanFieldNumber = 7;
+    private int span_;
+    /// <summary>
+    /// Grid span (1-24)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Span {
+      get { return span_; }
+      set {
+        span_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "props" field.</summary>
+    public const int PropsFieldNumber = 8;
+    private static readonly pbc::MapField<string, string>.Codec _map_props_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 66);
+    private readonly pbc::MapField<string, string> props_ = new pbc::MapField<string, string>();
+    /// <summary>
+    /// Additional widget properties
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Props {
+      get { return props_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as XRenderWidget);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(XRenderWidget other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Widget != other.Widget) return false;
+      if (Label != other.Label) return false;
+      if (Placeholder != other.Placeholder) return false;
+      if (Disabled != other.Disabled) return false;
+      if (ReadOnly != other.ReadOnly) return false;
+      if (Hidden != other.Hidden) return false;
+      if (Span != other.Span) return false;
+      if (!Props.Equals(other.Props)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Widget.Length != 0) hash ^= Widget.GetHashCode();
+      if (Label.Length != 0) hash ^= Label.GetHashCode();
+      if (Placeholder.Length != 0) hash ^= Placeholder.GetHashCode();
+      if (Disabled != false) hash ^= Disabled.GetHashCode();
+      if (ReadOnly != false) hash ^= ReadOnly.GetHashCode();
+      if (Hidden != false) hash ^= Hidden.GetHashCode();
+      if (Span != 0) hash ^= Span.GetHashCode();
+      hash ^= Props.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Widget.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Widget);
+      }
+      if (Label.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Label);
+      }
+      if (Placeholder.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Placeholder);
+      }
+      if (Disabled != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Disabled);
+      }
+      if (ReadOnly != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(ReadOnly);
+      }
+      if (Hidden != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Hidden);
+      }
+      if (Span != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Span);
+      }
+      props_.WriteTo(output, _map_props_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Widget.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Widget);
+      }
+      if (Label.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Label);
+      }
+      if (Placeholder.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Placeholder);
+      }
+      if (Disabled != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Disabled);
+      }
+      if (ReadOnly != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(ReadOnly);
+      }
+      if (Hidden != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Hidden);
+      }
+      if (Span != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Span);
+      }
+      props_.WriteTo(ref output, _map_props_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Widget.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Widget);
+      }
+      if (Label.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Label);
+      }
+      if (Placeholder.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Placeholder);
+      }
+      if (Disabled != false) {
+        size += 1 + 1;
+      }
+      if (ReadOnly != false) {
+        size += 1 + 1;
+      }
+      if (Hidden != false) {
+        size += 1 + 1;
+      }
+      if (Span != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Span);
+      }
+      size += props_.CalculateSize(_map_props_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(XRenderWidget other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Widget.Length != 0) {
+        Widget = other.Widget;
+      }
+      if (other.Label.Length != 0) {
+        Label = other.Label;
+      }
+      if (other.Placeholder.Length != 0) {
+        Placeholder = other.Placeholder;
+      }
+      if (other.Disabled != false) {
+        Disabled = other.Disabled;
+      }
+      if (other.ReadOnly != false) {
+        ReadOnly = other.ReadOnly;
+      }
+      if (other.Hidden != false) {
+        Hidden = other.Hidden;
+      }
+      if (other.Span != 0) {
+        Span = other.Span;
+      }
+      props_.MergeFrom(other.props_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Widget = input.ReadString();
+            break;
+          }
+          case 18: {
+            Label = input.ReadString();
+            break;
+          }
+          case 26: {
+            Placeholder = input.ReadString();
+            break;
+          }
+          case 32: {
+            Disabled = input.ReadBool();
+            break;
+          }
+          case 40: {
+            ReadOnly = input.ReadBool();
+            break;
+          }
+          case 48: {
+            Hidden = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Span = input.ReadInt32();
+            break;
+          }
+          case 66: {
+            props_.AddEntriesFrom(input, _map_props_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Widget = input.ReadString();
+            break;
+          }
+          case 18: {
+            Label = input.ReadString();
+            break;
+          }
+          case 26: {
+            Placeholder = input.ReadString();
+            break;
+          }
+          case 32: {
+            Disabled = input.ReadBool();
+            break;
+          }
+          case 40: {
+            ReadOnly = input.ReadBool();
+            break;
+          }
+          case 48: {
+            Hidden = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Span = input.ReadInt32();
+            break;
+          }
+          case 66: {
+            props_.AddEntriesFrom(ref input, _map_props_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// XRender form configuration.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class XRenderFormConfig : pb::IMessage<XRenderFormConfig>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<XRenderFormConfig> _parser = new pb::MessageParser<XRenderFormConfig>(() => new XRenderFormConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<XRenderFormConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Croupier.Common.V1.UiReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderFormConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderFormConfig(XRenderFormConfig other) : this() {
+      layoutType_ = other.layoutType_;
+      column_ = other.column_;
+      labelAlign_ = other.labelAlign_;
+      labelWidth_ = other.labelWidth_;
+      colon_ = other.colon_;
+      widgets_ = other.widgets_.Clone();
+      displayOrder_ = other.displayOrder_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public XRenderFormConfig Clone() {
+      return new XRenderFormConfig(this);
+    }
+
+    /// <summary>Field number for the "layout_type" field.</summary>
+    public const int LayoutTypeFieldNumber = 1;
+    private string layoutType_ = "";
+    /// <summary>
+    /// Layout: default/inline/flex
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LayoutType {
+      get { return layoutType_; }
+      set {
+        layoutType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "column" field.</summary>
+    public const int ColumnFieldNumber = 2;
+    private int column_;
+    /// <summary>
+    /// Column count for grid layout
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Column {
+      get { return column_; }
+      set {
+        column_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "label_align" field.</summary>
+    public const int LabelAlignFieldNumber = 3;
+    private string labelAlign_ = "";
+    /// <summary>
+    /// Label alignment: left/right/top
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LabelAlign {
+      get { return labelAlign_; }
+      set {
+        labelAlign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "label_width" field.</summary>
+    public const int LabelWidthFieldNumber = 4;
+    private int labelWidth_;
+    /// <summary>
+    /// Label width in pixels
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LabelWidth {
+      get { return labelWidth_; }
+      set {
+        labelWidth_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "colon" field.</summary>
+    public const int ColonFieldNumber = 5;
+    private bool colon_;
+    /// <summary>
+    /// Show colon after label
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Colon {
+      get { return colon_; }
+      set {
+        colon_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "widgets" field.</summary>
+    public const int WidgetsFieldNumber = 6;
+    private static readonly pbc::MapField<string, global::Croupier.Common.V1.XRenderWidget>.Codec _map_widgets_codec
+        = new pbc::MapField<string, global::Croupier.Common.V1.XRenderWidget>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Croupier.Common.V1.XRenderWidget.Parser), 50);
+    private readonly pbc::MapField<string, global::Croupier.Common.V1.XRenderWidget> widgets_ = new pbc::MapField<string, global::Croupier.Common.V1.XRenderWidget>();
+    /// <summary>
+    /// Field-specific widget configs (key: field path)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, global::Croupier.Common.V1.XRenderWidget> Widgets {
+      get { return widgets_; }
+    }
+
+    /// <summary>Field number for the "display_order" field.</summary>
+    public const int DisplayOrderFieldNumber = 7;
+    private static readonly pb::FieldCodec<string> _repeated_displayOrder_codec
+        = pb::FieldCodec.ForString(58);
+    private readonly pbc::RepeatedField<string> displayOrder_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Field display order
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> DisplayOrder {
+      get { return displayOrder_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as XRenderFormConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(XRenderFormConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LayoutType != other.LayoutType) return false;
+      if (Column != other.Column) return false;
+      if (LabelAlign != other.LabelAlign) return false;
+      if (LabelWidth != other.LabelWidth) return false;
+      if (Colon != other.Colon) return false;
+      if (!Widgets.Equals(other.Widgets)) return false;
+      if(!displayOrder_.Equals(other.displayOrder_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LayoutType.Length != 0) hash ^= LayoutType.GetHashCode();
+      if (Column != 0) hash ^= Column.GetHashCode();
+      if (LabelAlign.Length != 0) hash ^= LabelAlign.GetHashCode();
+      if (LabelWidth != 0) hash ^= LabelWidth.GetHashCode();
+      if (Colon != false) hash ^= Colon.GetHashCode();
+      hash ^= Widgets.GetHashCode();
+      hash ^= displayOrder_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LayoutType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LayoutType);
+      }
+      if (Column != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Column);
+      }
+      if (LabelAlign.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(LabelAlign);
+      }
+      if (LabelWidth != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(LabelWidth);
+      }
+      if (Colon != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Colon);
+      }
+      widgets_.WriteTo(output, _map_widgets_codec);
+      displayOrder_.WriteTo(output, _repeated_displayOrder_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LayoutType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(LayoutType);
+      }
+      if (Column != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Column);
+      }
+      if (LabelAlign.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(LabelAlign);
+      }
+      if (LabelWidth != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(LabelWidth);
+      }
+      if (Colon != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Colon);
+      }
+      widgets_.WriteTo(ref output, _map_widgets_codec);
+      displayOrder_.WriteTo(ref output, _repeated_displayOrder_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (LayoutType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LayoutType);
+      }
+      if (Column != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Column);
+      }
+      if (LabelAlign.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LabelAlign);
+      }
+      if (LabelWidth != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LabelWidth);
+      }
+      if (Colon != false) {
+        size += 1 + 1;
+      }
+      size += widgets_.CalculateSize(_map_widgets_codec);
+      size += displayOrder_.CalculateSize(_repeated_displayOrder_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(XRenderFormConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LayoutType.Length != 0) {
+        LayoutType = other.LayoutType;
+      }
+      if (other.Column != 0) {
+        Column = other.Column;
+      }
+      if (other.LabelAlign.Length != 0) {
+        LabelAlign = other.LabelAlign;
+      }
+      if (other.LabelWidth != 0) {
+        LabelWidth = other.LabelWidth;
+      }
+      if (other.Colon != false) {
+        Colon = other.Colon;
+      }
+      widgets_.MergeFrom(other.widgets_);
+      displayOrder_.Add(other.displayOrder_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            LayoutType = input.ReadString();
+            break;
+          }
+          case 16: {
+            Column = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            LabelAlign = input.ReadString();
+            break;
+          }
+          case 32: {
+            LabelWidth = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Colon = input.ReadBool();
+            break;
+          }
+          case 50: {
+            widgets_.AddEntriesFrom(input, _map_widgets_codec);
+            break;
+          }
+          case 58: {
+            displayOrder_.AddEntriesFrom(input, _repeated_displayOrder_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            LayoutType = input.ReadString();
+            break;
+          }
+          case 16: {
+            Column = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            LabelAlign = input.ReadString();
+            break;
+          }
+          case 32: {
+            LabelWidth = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Colon = input.ReadBool();
+            break;
+          }
+          case 50: {
+            widgets_.AddEntriesFrom(ref input, _map_widgets_codec);
+            break;
+          }
+          case 58: {
+            displayOrder_.AddEntriesFrom(ref input, _repeated_displayOrder_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Route-specific display configuration for functions.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RouteDisplayConfig : pb::IMessage<RouteDisplayConfig>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RouteDisplayConfig> _parser = new pb::MessageParser<RouteDisplayConfig>(() => new RouteDisplayConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RouteDisplayConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Croupier.Common.V1.UiReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RouteDisplayConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RouteDisplayConfig(RouteDisplayConfig other) : this() {
+      routePattern_ = other.routePattern_;
+      formConfig_ = other.formConfig_ != null ? other.formConfig_.Clone() : null;
+      hiddenFields_ = other.hiddenFields_.Clone();
+      requiredFields_ = other.requiredFields_.Clone();
+      submitButtonText_ = other.submitButtonText_;
+      compactMode_ = other.compactMode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RouteDisplayConfig Clone() {
+      return new RouteDisplayConfig(this);
+    }
+
+    /// <summary>Field number for the "route_pattern" field.</summary>
+    public const int RoutePatternFieldNumber = 1;
+    private string routePattern_ = "";
+    /// <summary>
+    /// Route pattern (e.g., "/functions/*", "/quick-actions")
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RoutePattern {
+      get { return routePattern_; }
+      set {
+        routePattern_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "form_config" field.</summary>
+    public const int FormConfigFieldNumber = 2;
+    private global::Croupier.Common.V1.XRenderFormConfig formConfig_;
+    /// <summary>
+    /// Form configuration for this route
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Croupier.Common.V1.XRenderFormConfig FormConfig {
+      get { return formConfig_; }
+      set {
+        formConfig_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hidden_fields" field.</summary>
+    public const int HiddenFieldsFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_hiddenFields_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> hiddenFields_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Fields to hide in this route
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> HiddenFields {
+      get { return hiddenFields_; }
+    }
+
+    /// <summary>Field number for the "required_fields" field.</summary>
+    public const int RequiredFieldsFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_requiredFields_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> requiredFields_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Fields required in this route
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> RequiredFields {
+      get { return requiredFields_; }
+    }
+
+    /// <summary>Field number for the "submit_button_text" field.</summary>
+    public const int SubmitButtonTextFieldNumber = 5;
+    private string submitButtonText_ = "";
+    /// <summary>
+    /// Custom submit button text
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SubmitButtonText {
+      get { return submitButtonText_; }
+      set {
+        submitButtonText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "compact_mode" field.</summary>
+    public const int CompactModeFieldNumber = 6;
+    private bool compactMode_;
+    /// <summary>
+    /// Use compact display mode
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CompactMode {
+      get { return compactMode_; }
+      set {
+        compactMode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RouteDisplayConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RouteDisplayConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoutePattern != other.RoutePattern) return false;
+      if (!object.Equals(FormConfig, other.FormConfig)) return false;
+      if(!hiddenFields_.Equals(other.hiddenFields_)) return false;
+      if(!requiredFields_.Equals(other.requiredFields_)) return false;
+      if (SubmitButtonText != other.SubmitButtonText) return false;
+      if (CompactMode != other.CompactMode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoutePattern.Length != 0) hash ^= RoutePattern.GetHashCode();
+      if (formConfig_ != null) hash ^= FormConfig.GetHashCode();
+      hash ^= hiddenFields_.GetHashCode();
+      hash ^= requiredFields_.GetHashCode();
+      if (SubmitButtonText.Length != 0) hash ^= SubmitButtonText.GetHashCode();
+      if (CompactMode != false) hash ^= CompactMode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RoutePattern.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RoutePattern);
+      }
+      if (formConfig_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(FormConfig);
+      }
+      hiddenFields_.WriteTo(output, _repeated_hiddenFields_codec);
+      requiredFields_.WriteTo(output, _repeated_requiredFields_codec);
+      if (SubmitButtonText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(SubmitButtonText);
+      }
+      if (CompactMode != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(CompactMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RoutePattern.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RoutePattern);
+      }
+      if (formConfig_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(FormConfig);
+      }
+      hiddenFields_.WriteTo(ref output, _repeated_hiddenFields_codec);
+      requiredFields_.WriteTo(ref output, _repeated_requiredFields_codec);
+      if (SubmitButtonText.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(SubmitButtonText);
+      }
+      if (CompactMode != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(CompactMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoutePattern.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RoutePattern);
+      }
+      if (formConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FormConfig);
+      }
+      size += hiddenFields_.CalculateSize(_repeated_hiddenFields_codec);
+      size += requiredFields_.CalculateSize(_repeated_requiredFields_codec);
+      if (SubmitButtonText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubmitButtonText);
+      }
+      if (CompactMode != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RouteDisplayConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoutePattern.Length != 0) {
+        RoutePattern = other.RoutePattern;
+      }
+      if (other.formConfig_ != null) {
+        if (formConfig_ == null) {
+          FormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+        }
+        FormConfig.MergeFrom(other.FormConfig);
+      }
+      hiddenFields_.Add(other.hiddenFields_);
+      requiredFields_.Add(other.requiredFields_);
+      if (other.SubmitButtonText.Length != 0) {
+        SubmitButtonText = other.SubmitButtonText;
+      }
+      if (other.CompactMode != false) {
+        CompactMode = other.CompactMode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            RoutePattern = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (formConfig_ == null) {
+              FormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+            }
+            input.ReadMessage(FormConfig);
+            break;
+          }
+          case 26: {
+            hiddenFields_.AddEntriesFrom(input, _repeated_hiddenFields_codec);
+            break;
+          }
+          case 34: {
+            requiredFields_.AddEntriesFrom(input, _repeated_requiredFields_codec);
+            break;
+          }
+          case 42: {
+            SubmitButtonText = input.ReadString();
+            break;
+          }
+          case 48: {
+            CompactMode = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            RoutePattern = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (formConfig_ == null) {
+              FormConfig = new global::Croupier.Common.V1.XRenderFormConfig();
+            }
+            input.ReadMessage(FormConfig);
+            break;
+          }
+          case 26: {
+            hiddenFields_.AddEntriesFrom(ref input, _repeated_hiddenFields_codec);
+            break;
+          }
+          case 34: {
+            requiredFields_.AddEntriesFrom(ref input, _repeated_requiredFields_codec);
+            break;
+          }
+          case 42: {
+            SubmitButtonText = input.ReadString();
+            break;
+          }
+          case 48: {
+            CompactMode = input.ReadBool();
             break;
           }
         }
