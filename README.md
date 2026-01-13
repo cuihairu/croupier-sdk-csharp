@@ -80,7 +80,6 @@ Croupier C# SDK 是 [Croupier](https://github.com/cuihairu/croupier) 游戏后�
 | **Windows** | x64 | ✅ 支持 |
 | **Linux** | x64, ARM64 | ✅ 支持 |
 | **macOS** | x64, ARM64 (Apple Silicon) | ✅ 支持 |
-| **Unity** | 2021.3+ | ✅ 支持 |
 
 ## 核心特性
 
