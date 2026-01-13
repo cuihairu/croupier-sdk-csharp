@@ -25,50 +25,48 @@ namespace Croupier.Agent.Local.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNjcm91cGllci9hZ2VudC9sb2NhbC92MS9sb2NhbC5wcm90bxIXY3JvdXBp",
-            "ZXIuYWdlbnQubG9jYWwudjEi8wIKF0xvY2FsRnVuY3Rpb25EZXNjcmlwdG9y",
+            "ZXIuYWdlbnQubG9jYWwudjEingIKF0xvY2FsRnVuY3Rpb25EZXNjcmlwdG9y",
             "Eg4KAmlkGAEgASgJUgJpZBIYCgd2ZXJzaW9uGAIgASgJUgd2ZXJzaW9uEhIK",
             "BHRhZ3MYAyADKAlSBHRhZ3MSGAoHc3VtbWFyeRgEIAEoCVIHc3VtbWFyeRIg",
             "CgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24SIQoMb3BlcmF0aW9u",
             "X2lkGAYgASgJUgtvcGVyYXRpb25JZBIeCgpkZXByZWNhdGVkGAcgASgIUgpk",
             "ZXByZWNhdGVkEiEKDGlucHV0X3NjaGVtYRgIIAEoCVILaW5wdXRTY2hlbWES",
-            "IwoNb3V0cHV0X3NjaGVtYRgJIAEoCVIMb3V0cHV0U2NoZW1hEiYKD3hfcmVu",
-            "ZGVyX3NjaGVtYRgKIAEoCVINeFJlbmRlclNjaGVtYRIrChJ4X3JlbmRlcl91",
-            "aV9zY2hlbWEYCyABKAlSD3hSZW5kZXJVaVNjaGVtYSK6AQoUUmVnaXN0ZXJM",
-            "b2NhbFJlcXVlc3QSHQoKc2VydmljZV9pZBgBIAEoCVIJc2VydmljZUlkEhgK",
-            "B3ZlcnNpb24YAiABKAlSB3ZlcnNpb24SGQoIcnBjX2FkZHIYAyABKAlSB3Jw",
-            "Y0FkZHISTgoJZnVuY3Rpb25zGAQgAygLMjAuY3JvdXBpZXIuYWdlbnQubG9j",
-            "YWwudjEuTG9jYWxGdW5jdGlvbkRlc2NyaXB0b3JSCWZ1bmN0aW9ucyI2ChVS",
-            "ZWdpc3RlckxvY2FsUmVzcG9uc2USHQoKc2Vzc2lvbl9pZBgBIAEoCVIJc2Vz",
-            "c2lvbklkIlAKEEhlYXJ0YmVhdFJlcXVlc3QSHQoKc2VydmljZV9pZBgBIAEo",
-            "CVIJc2VydmljZUlkEh0KCnNlc3Npb25faWQYAiABKAlSCXNlc3Npb25JZCIT",
-            "ChFIZWFydGJlYXRSZXNwb25zZSJ5Cg1Mb2NhbEluc3RhbmNlEh0KCnNlcnZp",
-            "Y2VfaWQYASABKAlSCXNlcnZpY2VJZBISCgRhZGRyGAIgASgJUgRhZGRyEhgK",
-            "B3ZlcnNpb24YAyABKAlSB3ZlcnNpb24SGwoJbGFzdF9zZWVuGAQgASgJUghs",
-            "YXN0U2VlbiJlCg1Mb2NhbEZ1bmN0aW9uEg4KAmlkGAEgASgJUgJpZBJECglp",
-            "bnN0YW5jZXMYAiADKAsyJi5jcm91cGllci5hZ2VudC5sb2NhbC52MS5Mb2Nh",
-            "bEluc3RhbmNlUglpbnN0YW5jZXMiEgoQTGlzdExvY2FsUmVxdWVzdCJZChFM",
-            "aXN0TG9jYWxSZXNwb25zZRJECglmdW5jdGlvbnMYASADKAsyJi5jcm91cGll",
-            "ci5hZ2VudC5sb2NhbC52MS5Mb2NhbEZ1bmN0aW9uUglmdW5jdGlvbnMiLAoT",
-            "R2V0Sm9iUmVzdWx0UmVxdWVzdBIVCgZqb2JfaWQYASABKAlSBWpvYklkIlwK",
-            "FEdldEpvYlJlc3VsdFJlc3BvbnNlEhQKBXN0YXRlGAEgASgJUgVzdGF0ZRIY",
-            "CgdwYXlsb2FkGAIgASgMUgdwYXlsb2FkEhQKBWVycm9yGAMgASgJUgVlcnJv",
-            "cjK6AwoTTG9jYWxDb250cm9sU2VydmljZRJuCg1SZWdpc3RlckxvY2FsEi0u",
-            "Y3JvdXBpZXIuYWdlbnQubG9jYWwudjEuUmVnaXN0ZXJMb2NhbFJlcXVlc3Qa",
-            "Li5jcm91cGllci5hZ2VudC5sb2NhbC52MS5SZWdpc3RlckxvY2FsUmVzcG9u",
-            "c2USYgoJSGVhcnRiZWF0EikuY3JvdXBpZXIuYWdlbnQubG9jYWwudjEuSGVh",
-            "cnRiZWF0UmVxdWVzdBoqLmNyb3VwaWVyLmFnZW50LmxvY2FsLnYxLkhlYXJ0",
-            "YmVhdFJlc3BvbnNlEmIKCUxpc3RMb2NhbBIpLmNyb3VwaWVyLmFnZW50Lmxv",
-            "Y2FsLnYxLkxpc3RMb2NhbFJlcXVlc3QaKi5jcm91cGllci5hZ2VudC5sb2Nh",
-            "bC52MS5MaXN0TG9jYWxSZXNwb25zZRJrCgxHZXRKb2JSZXN1bHQSLC5jcm91",
-            "cGllci5hZ2VudC5sb2NhbC52MS5HZXRKb2JSZXN1bHRSZXF1ZXN0Gi0uY3Jv",
-            "dXBpZXIuYWdlbnQubG9jYWwudjEuR2V0Sm9iUmVzdWx0UmVzcG9uc2VCcwoq",
-            "aW8uZ2l0aHViLmN1aWhhaXJ1LmNyb3VwaWVyLmFnZW50LmxvY2FsLnYxUAFa",
-            "Q2dpdGh1Yi5jb20vY3VpaGFpcnUvY3JvdXBpZXIvcGtnL3BiL2Nyb3VwaWVy",
-            "L2FnZW50L2xvY2FsL3YxO2xvY2FsdjFiBnByb3RvMw=="));
+            "IwoNb3V0cHV0X3NjaGVtYRgJIAEoCVIMb3V0cHV0U2NoZW1hIroBChRSZWdp",
+            "c3RlckxvY2FsUmVxdWVzdBIdCgpzZXJ2aWNlX2lkGAEgASgJUglzZXJ2aWNl",
+            "SWQSGAoHdmVyc2lvbhgCIAEoCVIHdmVyc2lvbhIZCghycGNfYWRkchgDIAEo",
+            "CVIHcnBjQWRkchJOCglmdW5jdGlvbnMYBCADKAsyMC5jcm91cGllci5hZ2Vu",
+            "dC5sb2NhbC52MS5Mb2NhbEZ1bmN0aW9uRGVzY3JpcHRvclIJZnVuY3Rpb25z",
+            "IjYKFVJlZ2lzdGVyTG9jYWxSZXNwb25zZRIdCgpzZXNzaW9uX2lkGAEgASgJ",
+            "UglzZXNzaW9uSWQiUAoQSGVhcnRiZWF0UmVxdWVzdBIdCgpzZXJ2aWNlX2lk",
+            "GAEgASgJUglzZXJ2aWNlSWQSHQoKc2Vzc2lvbl9pZBgCIAEoCVIJc2Vzc2lv",
+            "bklkIhMKEUhlYXJ0YmVhdFJlc3BvbnNlInkKDUxvY2FsSW5zdGFuY2USHQoK",
+            "c2VydmljZV9pZBgBIAEoCVIJc2VydmljZUlkEhIKBGFkZHIYAiABKAlSBGFk",
+            "ZHISGAoHdmVyc2lvbhgDIAEoCVIHdmVyc2lvbhIbCglsYXN0X3NlZW4YBCAB",
+            "KAlSCGxhc3RTZWVuImUKDUxvY2FsRnVuY3Rpb24SDgoCaWQYASABKAlSAmlk",
+            "EkQKCWluc3RhbmNlcxgCIAMoCzImLmNyb3VwaWVyLmFnZW50LmxvY2FsLnYx",
+            "LkxvY2FsSW5zdGFuY2VSCWluc3RhbmNlcyISChBMaXN0TG9jYWxSZXF1ZXN0",
+            "IlkKEUxpc3RMb2NhbFJlc3BvbnNlEkQKCWZ1bmN0aW9ucxgBIAMoCzImLmNy",
+            "b3VwaWVyLmFnZW50LmxvY2FsLnYxLkxvY2FsRnVuY3Rpb25SCWZ1bmN0aW9u",
+            "cyIsChNHZXRKb2JSZXN1bHRSZXF1ZXN0EhUKBmpvYl9pZBgBIAEoCVIFam9i",
+            "SWQiXAoUR2V0Sm9iUmVzdWx0UmVzcG9uc2USFAoFc3RhdGUYASABKAlSBXN0",
+            "YXRlEhgKB3BheWxvYWQYAiABKAxSB3BheWxvYWQSFAoFZXJyb3IYAyABKAlS",
+            "BWVycm9yMroDChNMb2NhbENvbnRyb2xTZXJ2aWNlEm4KDVJlZ2lzdGVyTG9j",
+            "YWwSLS5jcm91cGllci5hZ2VudC5sb2NhbC52MS5SZWdpc3RlckxvY2FsUmVx",
+            "dWVzdBouLmNyb3VwaWVyLmFnZW50LmxvY2FsLnYxLlJlZ2lzdGVyTG9jYWxS",
+            "ZXNwb25zZRJiCglIZWFydGJlYXQSKS5jcm91cGllci5hZ2VudC5sb2NhbC52",
+            "MS5IZWFydGJlYXRSZXF1ZXN0GiouY3JvdXBpZXIuYWdlbnQubG9jYWwudjEu",
+            "SGVhcnRiZWF0UmVzcG9uc2USYgoJTGlzdExvY2FsEikuY3JvdXBpZXIuYWdl",
+            "bnQubG9jYWwudjEuTGlzdExvY2FsUmVxdWVzdBoqLmNyb3VwaWVyLmFnZW50",
+            "LmxvY2FsLnYxLkxpc3RMb2NhbFJlc3BvbnNlEmsKDEdldEpvYlJlc3VsdBIs",
+            "LmNyb3VwaWVyLmFnZW50LmxvY2FsLnYxLkdldEpvYlJlc3VsdFJlcXVlc3Qa",
+            "LS5jcm91cGllci5hZ2VudC5sb2NhbC52MS5HZXRKb2JSZXN1bHRSZXNwb25z",
+            "ZUJzCippby5naXRodWIuY3VpaGFpcnUuY3JvdXBpZXIuYWdlbnQubG9jYWwu",
+            "djFQAVpDZ2l0aHViLmNvbS9jdWloYWlydS9jcm91cGllci9wa2cvcGIvY3Jv",
+            "dXBpZXIvYWdlbnQvbG9jYWwvdjE7bG9jYWx2MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Agent.Local.V1.LocalFunctionDescriptor), global::Croupier.Agent.Local.V1.LocalFunctionDescriptor.Parser, new[]{ "Id", "Version", "Tags", "Summary", "Description", "OperationId", "Deprecated", "InputSchema", "OutputSchema", "XRenderSchema", "XRenderUiSchema" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Agent.Local.V1.LocalFunctionDescriptor), global::Croupier.Agent.Local.V1.LocalFunctionDescriptor.Parser, new[]{ "Id", "Version", "Tags", "Summary", "Description", "OperationId", "Deprecated", "InputSchema", "OutputSchema" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Agent.Local.V1.RegisterLocalRequest), global::Croupier.Agent.Local.V1.RegisterLocalRequest.Parser, new[]{ "ServiceId", "Version", "RpcAddr", "Functions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Agent.Local.V1.RegisterLocalResponse), global::Croupier.Agent.Local.V1.RegisterLocalResponse.Parser, new[]{ "SessionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Agent.Local.V1.HeartbeatRequest), global::Croupier.Agent.Local.V1.HeartbeatRequest.Parser, new[]{ "ServiceId", "SessionId" }, null, null, null, null),
@@ -133,8 +131,6 @@ namespace Croupier.Agent.Local.V1 {
       deprecated_ = other.deprecated_;
       inputSchema_ = other.inputSchema_;
       outputSchema_ = other.outputSchema_;
-      xRenderSchema_ = other.xRenderSchema_;
-      xRenderUiSchema_ = other.xRenderUiSchema_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -278,36 +274,6 @@ namespace Croupier.Agent.Local.V1 {
       }
     }
 
-    /// <summary>Field number for the "x_render_schema" field.</summary>
-    public const int XRenderSchemaFieldNumber = 10;
-    private string xRenderSchema_ = "";
-    /// <summary>
-    /// x-render extension for UI control
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string XRenderSchema {
-      get { return xRenderSchema_; }
-      set {
-        xRenderSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "x_render_ui_schema" field.</summary>
-    public const int XRenderUiSchemaFieldNumber = 11;
-    private string xRenderUiSchema_ = "";
-    /// <summary>
-    /// XRender UI schema for widget configuration (JSON string)
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string XRenderUiSchema {
-      get { return xRenderUiSchema_; }
-      set {
-        xRenderUiSchema_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -332,8 +298,6 @@ namespace Croupier.Agent.Local.V1 {
       if (Deprecated != other.Deprecated) return false;
       if (InputSchema != other.InputSchema) return false;
       if (OutputSchema != other.OutputSchema) return false;
-      if (XRenderSchema != other.XRenderSchema) return false;
-      if (XRenderUiSchema != other.XRenderUiSchema) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -350,8 +314,6 @@ namespace Croupier.Agent.Local.V1 {
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
       if (InputSchema.Length != 0) hash ^= InputSchema.GetHashCode();
       if (OutputSchema.Length != 0) hash ^= OutputSchema.GetHashCode();
-      if (XRenderSchema.Length != 0) hash ^= XRenderSchema.GetHashCode();
-      if (XRenderUiSchema.Length != 0) hash ^= XRenderUiSchema.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -403,14 +365,6 @@ namespace Croupier.Agent.Local.V1 {
         output.WriteRawTag(74);
         output.WriteString(OutputSchema);
       }
-      if (XRenderSchema.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(XRenderSchema);
-      }
-      if (XRenderUiSchema.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(XRenderUiSchema);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -454,14 +408,6 @@ namespace Croupier.Agent.Local.V1 {
         output.WriteRawTag(74);
         output.WriteString(OutputSchema);
       }
-      if (XRenderSchema.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(XRenderSchema);
-      }
-      if (XRenderUiSchema.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(XRenderUiSchema);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -496,12 +442,6 @@ namespace Croupier.Agent.Local.V1 {
       }
       if (OutputSchema.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OutputSchema);
-      }
-      if (XRenderSchema.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(XRenderSchema);
-      }
-      if (XRenderUiSchema.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(XRenderUiSchema);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -539,12 +479,6 @@ namespace Croupier.Agent.Local.V1 {
       }
       if (other.OutputSchema.Length != 0) {
         OutputSchema = other.OutputSchema;
-      }
-      if (other.XRenderSchema.Length != 0) {
-        XRenderSchema = other.XRenderSchema;
-      }
-      if (other.XRenderUiSchema.Length != 0) {
-        XRenderUiSchema = other.XRenderUiSchema;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -601,14 +535,6 @@ namespace Croupier.Agent.Local.V1 {
             OutputSchema = input.ReadString();
             break;
           }
-          case 82: {
-            XRenderSchema = input.ReadString();
-            break;
-          }
-          case 90: {
-            XRenderUiSchema = input.ReadString();
-            break;
-          }
         }
       }
     #endif
@@ -662,14 +588,6 @@ namespace Croupier.Agent.Local.V1 {
           }
           case 74: {
             OutputSchema = input.ReadString();
-            break;
-          }
-          case 82: {
-            XRenderSchema = input.ReadString();
-            break;
-          }
-          case 90: {
-            XRenderUiSchema = input.ReadString();
             break;
           }
         }
