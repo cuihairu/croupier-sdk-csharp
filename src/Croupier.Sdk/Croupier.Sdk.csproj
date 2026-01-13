@@ -15,12 +15,12 @@
 
   <!-- ============================================================================ -->
   <!-- 版本锁定 - 必须与 croupier-proto/CLAUDE.md 保持一致！ -->
-  <!-- Google.Protobuf 3.29.2 对应 protoc-csharp v29.2 -->
+  <!-- Google.Protobuf 3.29.5 对应 protoc-csharp v29.5 -->
   <!-- Grpc.Net.Client 2.69.0 对应 grpc-csharp v1.69.0 -->
   <!-- ============================================================================ -->
   <ItemGroup>
     <PackageReference Include="Grpc.Net.Client" Version="2.69.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.29.2" />
+    <PackageReference Include="Google.Protobuf" Version="3.29.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
