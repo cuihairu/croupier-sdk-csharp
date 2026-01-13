@@ -101,33 +101,33 @@ namespace Croupier.Ops.V1 {
             "Ugp3b3JraW5nRGlyEkEKA2VudhgEIAMoCzIvLmNyb3VwaWVyLm9wcy52MS5F",
             "eGVjdXRlQ29tbWFuZFJlcXVlc3QuRW52RW50cnlSA2VudhInCg90aW1lb3V0",
             "X3NlY29uZHMYBSABKAVSDnRpbWVvdXRTZWNvbmRzGjYKCEVudkVudHJ5EhAK",
-            "A2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEilQEK",
+            "A2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEilwEK",
             "FkV4ZWN1dGVDb21tYW5kUmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3Vj",
-            "Y2VzcxIbCglleGl0X2NvZGUYAiABKAVSCGV4aXRDb2RlEhYKBnN0ZG91dBgD",
-            "IAEoCVIGc3Rkb3V0EhYKBnN0ZGVychgEIAEoCVIGc3RkZXJyEhQKBWVycm9y",
-            "GAUgASgJUgVlcnJvciq1AQoMUHJvY2Vzc1N0YXRlEh0KGVBST0NFU1NfU1RB",
-            "VEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1NUQVRFX1JVTk5JTkcQARIZ",
-            "ChVQUk9DRVNTX1NUQVRFX1NUT1BQRUQQAhIYChRQUk9DRVNTX1NUQVRFX0ZB",
-            "SUxFRBADEhoKFlBST0NFU1NfU1RBVEVfU1RBUlRJTkcQBBIaChZQUk9DRVNT",
-            "X1NUQVRFX1NUT1BQSU5HEAUytAUKCk9wc1NlcnZpY2USRwoNUmVwb3J0TWV0",
-            "cmljcxIeLmNyb3VwaWVyLm9wcy52MS5NZXRyaWNzUmVwb3J0GhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5EkkKDVN0cmVhbU1ldHJpY3MSHi5jcm91cGllci5v",
-            "cHMudjEuTWV0cmljc1JlcG9ydBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSgB",
-            "EkQKDUdldFN5c3RlbUluZm8SFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGy5j",
-            "cm91cGllci5vcHMudjEuU3lzdGVtSW5mbxJhCg5SZXN0YXJ0UHJvY2VzcxIm",
-            "LmNyb3VwaWVyLm9wcy52MS5SZXN0YXJ0UHJvY2Vzc1JlcXVlc3QaJy5jcm91",
-            "cGllci5vcHMudjEuUmVzdGFydFByb2Nlc3NSZXNwb25zZRJYCgtTdG9wUHJv",
-            "Y2VzcxIjLmNyb3VwaWVyLm9wcy52MS5TdG9wUHJvY2Vzc1JlcXVlc3QaJC5j",
-            "cm91cGllci5vcHMudjEuU3RvcFByb2Nlc3NSZXNwb25zZRJbCgxTdGFydFBy",
-            "b2Nlc3MSJC5jcm91cGllci5vcHMudjEuU3RhcnRQcm9jZXNzUmVxdWVzdBol",
-            "LmNyb3VwaWVyLm9wcy52MS5TdGFydFByb2Nlc3NSZXNwb25zZRJPCg1MaXN0",
-            "UHJvY2Vzc2VzEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GiYuY3JvdXBpZXIu",
-            "b3BzLnYxLkxpc3RQcm9jZXNzZXNSZXNwb25zZRJhCg5FeGVjdXRlQ29tbWFu",
-            "ZBImLmNyb3VwaWVyLm9wcy52MS5FeGVjdXRlQ29tbWFuZFJlcXVlc3QaJy5j",
-            "cm91cGllci5vcHMudjEuRXhlY3V0ZUNvbW1hbmRSZXNwb25zZUJzCiJpby5n",
-            "aXRodWIuY3VpaGFpcnUuY3JvdXBpZXIub3BzLnYxUAFaOWdpdGh1Yi5jb20v",
-            "Y3VpaGFpcnUvY3JvdXBpZXIvcGtnL3BiL2Nyb3VwaWVyL29wcy92MTtvcHN2",
-            "MaoCD0Nyb3VwaWVyLk9wcy5WMWIGcHJvdG8z"));
+            "Y2VzcxIbCglleGl0X2NvZGUYAiABKAVSCGV4aXRDb2RlEhcKB3N0ZF9vdXQY",
+            "AyABKAlSBnN0ZE91dBIXCgdzdGRfZXJyGAQgASgJUgZzdGRFcnISFAoFZXJy",
+            "b3IYBSABKAlSBWVycm9yKrUBCgxQcm9jZXNzU3RhdGUSHQoZUFJPQ0VTU19T",
+            "VEFURV9VTlNQRUNJRklFRBAAEhkKFVBST0NFU1NfU1RBVEVfUlVOTklORxAB",
+            "EhkKFVBST0NFU1NfU1RBVEVfU1RPUFBFRBACEhgKFFBST0NFU1NfU1RBVEVf",
+            "RkFJTEVEEAMSGgoWUFJPQ0VTU19TVEFURV9TVEFSVElORxAEEhoKFlBST0NF",
+            "U1NfU1RBVEVfU1RPUFBJTkcQBTK0BQoKT3BzU2VydmljZRJHCg1SZXBvcnRN",
+            "ZXRyaWNzEh4uY3JvdXBpZXIub3BzLnYxLk1ldHJpY3NSZXBvcnQaFi5nb29n",
+            "bGUucHJvdG9idWYuRW1wdHkSSQoNU3RyZWFtTWV0cmljcxIeLmNyb3VwaWVy",
+            "Lm9wcy52MS5NZXRyaWNzUmVwb3J0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
+            "KAESRAoNR2V0U3lzdGVtSW5mbxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRob",
+            "LmNyb3VwaWVyLm9wcy52MS5TeXN0ZW1JbmZvEmEKDlJlc3RhcnRQcm9jZXNz",
+            "EiYuY3JvdXBpZXIub3BzLnYxLlJlc3RhcnRQcm9jZXNzUmVxdWVzdBonLmNy",
+            "b3VwaWVyLm9wcy52MS5SZXN0YXJ0UHJvY2Vzc1Jlc3BvbnNlElgKC1N0b3BQ",
+            "cm9jZXNzEiMuY3JvdXBpZXIub3BzLnYxLlN0b3BQcm9jZXNzUmVxdWVzdBok",
+            "LmNyb3VwaWVyLm9wcy52MS5TdG9wUHJvY2Vzc1Jlc3BvbnNlElsKDFN0YXJ0",
+            "UHJvY2VzcxIkLmNyb3VwaWVyLm9wcy52MS5TdGFydFByb2Nlc3NSZXF1ZXN0",
+            "GiUuY3JvdXBpZXIub3BzLnYxLlN0YXJ0UHJvY2Vzc1Jlc3BvbnNlEk8KDUxp",
+            "c3RQcm9jZXNzZXMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaJi5jcm91cGll",
+            "ci5vcHMudjEuTGlzdFByb2Nlc3Nlc1Jlc3BvbnNlEmEKDkV4ZWN1dGVDb21t",
+            "YW5kEiYuY3JvdXBpZXIub3BzLnYxLkV4ZWN1dGVDb21tYW5kUmVxdWVzdBon",
+            "LmNyb3VwaWVyLm9wcy52MS5FeGVjdXRlQ29tbWFuZFJlc3BvbnNlQnMKImlv",
+            "LmdpdGh1Yi5jdWloYWlydS5jcm91cGllci5vcHMudjFQAVo5Z2l0aHViLmNv",
+            "bS9jdWloYWlydS9jcm91cGllci9wa2cvcGIvY3JvdXBpZXIvb3BzL3YxO29w",
+            "c3YxqgIPQ3JvdXBpZXIuT3BzLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Croupier.Ops.V1.ProcessState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -148,7 +148,7 @@ namespace Croupier.Ops.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Ops.V1.ListProcessesResponse), global::Croupier.Ops.V1.ListProcessesResponse.Parser, new[]{ "Processes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Ops.V1.ManagedProcess), global::Croupier.Ops.V1.ManagedProcess.Parser, new[]{ "Name", "Command", "WorkingDir", "State", "Pid", "RestartCount", "LastStart" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Ops.V1.ExecuteCommandRequest), global::Croupier.Ops.V1.ExecuteCommandRequest.Parser, new[]{ "Command", "Args", "WorkingDir", "Env", "TimeoutSeconds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Ops.V1.ExecuteCommandResponse), global::Croupier.Ops.V1.ExecuteCommandResponse.Parser, new[]{ "Success", "ExitCode", "Stdout", "Stderr", "Error" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Ops.V1.ExecuteCommandResponse), global::Croupier.Ops.V1.ExecuteCommandResponse.Parser, new[]{ "Success", "ExitCode", "StdOut", "StdErr", "Error" }, null, null, null, null)
           }));
     }
     #endregion
@@ -6299,8 +6299,8 @@ namespace Croupier.Ops.V1 {
     public ExecuteCommandResponse(ExecuteCommandResponse other) : this() {
       success_ = other.success_;
       exitCode_ = other.exitCode_;
-      stdout_ = other.stdout_;
-      stderr_ = other.stderr_;
+      stdOut_ = other.stdOut_;
+      stdErr_ = other.stdErr_;
       error_ = other.error_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -6335,27 +6335,33 @@ namespace Croupier.Ops.V1 {
       }
     }
 
-    /// <summary>Field number for the "stdout" field.</summary>
-    public const int StdoutFieldNumber = 3;
-    private string stdout_ = "";
+    /// <summary>Field number for the "std_out" field.</summary>
+    public const int StdOutFieldNumber = 3;
+    private string stdOut_ = "";
+    /// <summary>
+    /// Renamed from 'stdout' to avoid Windows CRT macro conflict
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Stdout {
-      get { return stdout_; }
+    public string StdOut {
+      get { return stdOut_; }
       set {
-        stdout_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        stdOut_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "stderr" field.</summary>
-    public const int StderrFieldNumber = 4;
-    private string stderr_ = "";
+    /// <summary>Field number for the "std_err" field.</summary>
+    public const int StdErrFieldNumber = 4;
+    private string stdErr_ = "";
+    /// <summary>
+    /// Renamed from 'stderr' to avoid Windows CRT macro conflict
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Stderr {
-      get { return stderr_; }
+    public string StdErr {
+      get { return stdErr_; }
       set {
-        stderr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        stdErr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -6391,8 +6397,8 @@ namespace Croupier.Ops.V1 {
       }
       if (Success != other.Success) return false;
       if (ExitCode != other.ExitCode) return false;
-      if (Stdout != other.Stdout) return false;
-      if (Stderr != other.Stderr) return false;
+      if (StdOut != other.StdOut) return false;
+      if (StdErr != other.StdErr) return false;
       if (Error != other.Error) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -6403,8 +6409,8 @@ namespace Croupier.Ops.V1 {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       if (ExitCode != 0) hash ^= ExitCode.GetHashCode();
-      if (Stdout.Length != 0) hash ^= Stdout.GetHashCode();
-      if (Stderr.Length != 0) hash ^= Stderr.GetHashCode();
+      if (StdOut.Length != 0) hash ^= StdOut.GetHashCode();
+      if (StdErr.Length != 0) hash ^= StdErr.GetHashCode();
       if (Error.Length != 0) hash ^= Error.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -6432,13 +6438,13 @@ namespace Croupier.Ops.V1 {
         output.WriteRawTag(16);
         output.WriteInt32(ExitCode);
       }
-      if (Stdout.Length != 0) {
+      if (StdOut.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Stdout);
+        output.WriteString(StdOut);
       }
-      if (Stderr.Length != 0) {
+      if (StdErr.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Stderr);
+        output.WriteString(StdErr);
       }
       if (Error.Length != 0) {
         output.WriteRawTag(42);
@@ -6462,13 +6468,13 @@ namespace Croupier.Ops.V1 {
         output.WriteRawTag(16);
         output.WriteInt32(ExitCode);
       }
-      if (Stdout.Length != 0) {
+      if (StdOut.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Stdout);
+        output.WriteString(StdOut);
       }
-      if (Stderr.Length != 0) {
+      if (StdErr.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Stderr);
+        output.WriteString(StdErr);
       }
       if (Error.Length != 0) {
         output.WriteRawTag(42);
@@ -6490,11 +6496,11 @@ namespace Croupier.Ops.V1 {
       if (ExitCode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ExitCode);
       }
-      if (Stdout.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Stdout);
+      if (StdOut.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StdOut);
       }
-      if (Stderr.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Stderr);
+      if (StdErr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StdErr);
       }
       if (Error.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Error);
@@ -6517,11 +6523,11 @@ namespace Croupier.Ops.V1 {
       if (other.ExitCode != 0) {
         ExitCode = other.ExitCode;
       }
-      if (other.Stdout.Length != 0) {
-        Stdout = other.Stdout;
+      if (other.StdOut.Length != 0) {
+        StdOut = other.StdOut;
       }
-      if (other.Stderr.Length != 0) {
-        Stderr = other.Stderr;
+      if (other.StdErr.Length != 0) {
+        StdErr = other.StdErr;
       }
       if (other.Error.Length != 0) {
         Error = other.Error;
@@ -6554,11 +6560,11 @@ namespace Croupier.Ops.V1 {
             break;
           }
           case 26: {
-            Stdout = input.ReadString();
+            StdOut = input.ReadString();
             break;
           }
           case 34: {
-            Stderr = input.ReadString();
+            StdErr = input.ReadString();
             break;
           }
           case 42: {
@@ -6593,11 +6599,11 @@ namespace Croupier.Ops.V1 {
             break;
           }
           case 26: {
-            Stdout = input.ReadString();
+            StdOut = input.ReadString();
             break;
           }
           case 34: {
-            Stderr = input.ReadString();
+            StdErr = input.ReadString();
             break;
           }
           case 42: {
