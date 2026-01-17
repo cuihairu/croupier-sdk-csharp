@@ -13,6 +13,11 @@
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
+  <!-- Allow test project to access internal members -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="Croupier.Sdk.Tests" />
+  </ItemGroup>
+
   <!-- ============================================================================ -->
   <!-- 版本锁定 - 必须与 croupier-proto/CLAUDE.md 保持一致！ -->
   <!-- Google.Protobuf 3.29.5 对应 protoc-csharp v29.5 -->

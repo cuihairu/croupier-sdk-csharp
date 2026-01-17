@@ -37,7 +37,7 @@ jobs:
       run: |
         # Find and run test projects
         if [ -n "$(find . -name '*.Tests.csproj')" ]; then
-          dotnet test --configuration Release --no-build --verbosity normal
+          dotnet test --configuration Release --verbosity normal
         else
           echo "No test projects found, skipping tests"
         fi
@@ -72,7 +72,7 @@ jobs:
     - name: Run tests with coverage (if any)
       run: |
         if [ -n "$(find . -name '*.Tests.csproj')" ]; then
-          dotnet test --configuration Release --no-build \
+          dotnet test --configuration Release \
             --collect:"XPlat Code Coverage" \
             -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         else
