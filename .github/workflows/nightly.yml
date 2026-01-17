@@ -80,7 +80,7 @@ jobs:
     - name: Run tests (if any)
       run: |
         if [ -n "$(find . -name '*.Tests.csproj')" ]; then
-          dotnet test --configuration Release --no-build --verbosity normal
+          dotnet test --configuration Release --verbosity normal
         else
           echo "No test projects found, skipping tests"
         fi
