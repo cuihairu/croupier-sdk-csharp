@@ -227,15 +227,20 @@ public class MainThreadDispatcherTests : IDisposable
     }
 
     [Fact]
-    public async Task IsMainThread_ReturnsFalse_OnBackgroundThread()
+    public void IsMainThread_ReturnsFalse_OnBackgroundThread()
     {
         bool isMainThread = true;
+        var resetEvent = new ManualResetEventSlim(false);
 
-        await Task.Run(() =>
+        // Use explicit Thread instead of Task.Run to guarantee a different thread
+        var thread = new Thread(() =>
         {
             isMainThread = MainThreadDispatcher.Instance.IsMainThread;
+            resetEvent.Set();
         });
+        thread.Start();
+        resetEvent.Wait(TimeSpan.FromSeconds(5));
 
-        Assert.False(isMainThread);
+        Assert.False(isMainThread, "IsMainThread should return false on a background thread");
     }
 }
