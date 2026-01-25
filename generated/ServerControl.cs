@@ -43,61 +43,65 @@ namespace Croupier.Server.V1 {
             "CgpzZXJ2aWNlX2lkGAEgASgJUglzZXJ2aWNlSWQSEgoEYWRkchgCIAEoCVIE",
             "YWRkchIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEiQKDmxhc3Rfc2Vlbl91",
             "bml4GAQgASgDUgxsYXN0U2VlblVuaXgSIQoMZnVuY3Rpb25faWRzGAUgAygJ",
-            "UgtmdW5jdGlvbklkcyKSAgoPUmVnaXN0ZXJSZXF1ZXN0EhkKCGFnZW50X2lk",
+            "UgtmdW5jdGlvbklkcyLjAwoPUmVnaXN0ZXJSZXF1ZXN0EhkKCGFnZW50X2lk",
             "GAEgASgJUgdhZ2VudElkEhgKB3ZlcnNpb24YAiABKAlSB3ZlcnNpb24SRAoJ",
             "ZnVuY3Rpb25zGAMgAygLMiYuY3JvdXBpZXIuc2VydmVyLnYxLkZ1bmN0aW9u",
             "RGVzY3JpcHRvclIJZnVuY3Rpb25zEhkKCHJwY19hZGRyGAQgASgJUgdycGNB",
             "ZGRyEhcKB2dhbWVfaWQYBSABKAlSBmdhbWVJZBIQCgNlbnYYBiABKAlSA2Vu",
             "dhI+Cglwcm9jZXNzZXMYByADKAsyIC5jcm91cGllci5zZXJ2ZXIudjEuQWdl",
-            "bnRQcm9jZXNzUglwcm9jZXNzZXMiTgoQUmVnaXN0ZXJSZXNwb25zZRIdCgpz",
-            "ZXNzaW9uX2lkGAEgASgJUglzZXNzaW9uSWQSGwoJZXhwaXJlX2F0GAIgASgD",
-            "UghleHBpcmVBdCJMChBIZWFydGJlYXRSZXF1ZXN0EhkKCGFnZW50X2lkGAEg",
-            "ASgJUgdhZ2VudElkEh0KCnNlc3Npb25faWQYAiABKAlSCXNlc3Npb25JZCIT",
-            "ChFIZWFydGJlYXRSZXNwb25zZSJeCgxQcm92aWRlck1ldGESDgoCaWQYASAB",
-            "KAlSAmlkEhgKB3ZlcnNpb24YAiABKAlSB3ZlcnNpb24SEgoEbGFuZxgDIAEo",
-            "CVIEbGFuZxIQCgNzZGsYBCABKAlSA3NkayKFAQobUmVnaXN0ZXJDYXBhYmls",
-            "aXRpZXNSZXF1ZXN0EjwKCHByb3ZpZGVyGAEgASgLMiAuY3JvdXBpZXIuc2Vy",
-            "dmVyLnYxLlByb3ZpZGVyTWV0YVIIcHJvdmlkZXISKAoQbWFuaWZlc3RfanNv",
-            "bl9nehgCIAEoDFIObWFuaWZlc3RKc29uR3oiHgocUmVnaXN0ZXJDYXBhYmls",
-            "aXRpZXNSZXNwb25zZSJkChxMaXN0RnVuY3Rpb25zU3VtbWFyeVJlc3BvbnNl",
-            "EkQKCWZ1bmN0aW9ucxgBIAMoCzImLmNyb3VwaWVyLnNlcnZlci52MS5GdW5j",
-            "dGlvbkRlc2NyaXB0b3JSCWZ1bmN0aW9ucyI2ChlHZXRBZ2VudFN5c3RlbUlu",
-            "Zm9SZXF1ZXN0EhkKCGFnZW50X2lkGAEgASgJUgdhZ2VudElkIjYKGUxpc3RB",
-            "Z2VudFByb2Nlc3Nlc1JlcXVlc3QSGQoIYWdlbnRfaWQYASABKAlSB2FnZW50",
-            "SWQiegoTUXVlcnlNZXRyaWNzUmVxdWVzdBIbCglhZ2VudF9pZHMYASADKAlS",
-            "CGFnZW50SWRzEjAKBXNpbmNlGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcFIFc2luY2USFAoFbGltaXQYAyABKA1SBWxpbWl0IlcKFFF1ZXJ5",
-            "TWV0cmljc1Jlc3BvbnNlEj8KB2VudHJpZXMYASADKAsyJS5jcm91cGllci5z",
-            "ZXJ2ZXIudjEuQWdlbnRNZXRyaWNzRW50cnlSB2VudHJpZXMiogEKEUFnZW50",
-            "TWV0cmljc0VudHJ5EhkKCGFnZW50X2lkGAEgASgJUgdhZ2VudElkEjgKCXRp",
-            "bWVzdGFtcBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXRp",
-            "bWVzdGFtcBI4CgdtZXRyaWNzGAMgASgLMh4uY3JvdXBpZXIub3BzLnYxLk1l",
-            "dHJpY3NSZXBvcnRSB21ldHJpY3My0AUKDkNvbnRyb2xTZXJ2aWNlEmAKFExp",
-            "c3RGdW5jdGlvbnNTdW1tYXJ5EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GjAu",
-            "Y3JvdXBpZXIuc2VydmVyLnYxLkxpc3RGdW5jdGlvbnNTdW1tYXJ5UmVzcG9u",
-            "c2USVQoIUmVnaXN0ZXISIy5jcm91cGllci5zZXJ2ZXIudjEuUmVnaXN0ZXJS",
-            "ZXF1ZXN0GiQuY3JvdXBpZXIuc2VydmVyLnYxLlJlZ2lzdGVyUmVzcG9uc2US",
-            "WAoJSGVhcnRiZWF0EiQuY3JvdXBpZXIuc2VydmVyLnYxLkhlYXJ0YmVhdFJl",
-            "cXVlc3QaJS5jcm91cGllci5zZXJ2ZXIudjEuSGVhcnRiZWF0UmVzcG9uc2US",
-            "eQoUUmVnaXN0ZXJDYXBhYmlsaXRpZXMSLy5jcm91cGllci5zZXJ2ZXIudjEu",
-            "UmVnaXN0ZXJDYXBhYmlsaXRpZXNSZXF1ZXN0GjAuY3JvdXBpZXIuc2VydmVy",
-            "LnYxLlJlZ2lzdGVyQ2FwYWJpbGl0aWVzUmVzcG9uc2USYAoSR2V0QWdlbnRT",
-            "eXN0ZW1JbmZvEi0uY3JvdXBpZXIuc2VydmVyLnYxLkdldEFnZW50U3lzdGVt",
-            "SW5mb1JlcXVlc3QaGy5jcm91cGllci5vcHMudjEuU3lzdGVtSW5mbxJrChJM",
-            "aXN0QWdlbnRQcm9jZXNzZXMSLS5jcm91cGllci5zZXJ2ZXIudjEuTGlzdEFn",
-            "ZW50UHJvY2Vzc2VzUmVxdWVzdBomLmNyb3VwaWVyLm9wcy52MS5MaXN0UHJv",
-            "Y2Vzc2VzUmVzcG9uc2USYQoMUXVlcnlNZXRyaWNzEicuY3JvdXBpZXIuc2Vy",
-            "dmVyLnYxLlF1ZXJ5TWV0cmljc1JlcXVlc3QaKC5jcm91cGllci5zZXJ2ZXIu",
-            "djEuUXVlcnlNZXRyaWNzUmVzcG9uc2VCagolaW8uZ2l0aHViLmN1aWhhaXJ1",
-            "LmNyb3VwaWVyLnNlcnZlci52MVABWj9naXRodWIuY29tL2N1aWhhaXJ1L2Ny",
-            "b3VwaWVyL3BrZy9wYi9jcm91cGllci9zZXJ2ZXIvdjE7c2VydmVydjFiBnBy",
-            "b3RvMw=="));
+            "bnRQcm9jZXNzUglwcm9jZXNzZXMSHwoLdHRsX3NlY29uZHMYCCABKA1SCnR0",
+            "bFNlY29uZHMSFgoGcmVnaW9uGAogASgJUgZyZWdpb24SEgoEem9uZRgLIAEo",
+            "CVIEem9uZRJHCgZsYWJlbHMYDCADKAsyLy5jcm91cGllci5zZXJ2ZXIudjEu",
+            "UmVnaXN0ZXJSZXF1ZXN0LkxhYmVsc0VudHJ5UgZsYWJlbHMaOQoLTGFiZWxz",
+            "RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVl",
+            "OgI4ASJOChBSZWdpc3RlclJlc3BvbnNlEh0KCnNlc3Npb25faWQYASABKAlS",
+            "CXNlc3Npb25JZBIbCglleHBpcmVfYXQYAiABKANSCGV4cGlyZUF0IkwKEEhl",
+            "YXJ0YmVhdFJlcXVlc3QSGQoIYWdlbnRfaWQYASABKAlSB2FnZW50SWQSHQoK",
+            "c2Vzc2lvbl9pZBgCIAEoCVIJc2Vzc2lvbklkIhMKEUhlYXJ0YmVhdFJlc3Bv",
+            "bnNlIl4KDFByb3ZpZGVyTWV0YRIOCgJpZBgBIAEoCVICaWQSGAoHdmVyc2lv",
+            "bhgCIAEoCVIHdmVyc2lvbhISCgRsYW5nGAMgASgJUgRsYW5nEhAKA3NkaxgE",
+            "IAEoCVIDc2RrIoUBChtSZWdpc3RlckNhcGFiaWxpdGllc1JlcXVlc3QSPAoI",
+            "cHJvdmlkZXIYASABKAsyIC5jcm91cGllci5zZXJ2ZXIudjEuUHJvdmlkZXJN",
+            "ZXRhUghwcm92aWRlchIoChBtYW5pZmVzdF9qc29uX2d6GAIgASgMUg5tYW5p",
+            "ZmVzdEpzb25HeiIeChxSZWdpc3RlckNhcGFiaWxpdGllc1Jlc3BvbnNlImQK",
+            "HExpc3RGdW5jdGlvbnNTdW1tYXJ5UmVzcG9uc2USRAoJZnVuY3Rpb25zGAEg",
+            "AygLMiYuY3JvdXBpZXIuc2VydmVyLnYxLkZ1bmN0aW9uRGVzY3JpcHRvclIJ",
+            "ZnVuY3Rpb25zIjYKGUdldEFnZW50U3lzdGVtSW5mb1JlcXVlc3QSGQoIYWdl",
+            "bnRfaWQYASABKAlSB2FnZW50SWQiNgoZTGlzdEFnZW50UHJvY2Vzc2VzUmVx",
+            "dWVzdBIZCghhZ2VudF9pZBgBIAEoCVIHYWdlbnRJZCJ6ChNRdWVyeU1ldHJp",
+            "Y3NSZXF1ZXN0EhsKCWFnZW50X2lkcxgBIAMoCVIIYWdlbnRJZHMSMAoFc2lu",
+            "Y2UYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgVzaW5jZRIU",
+            "CgVsaW1pdBgDIAEoDVIFbGltaXQiVwoUUXVlcnlNZXRyaWNzUmVzcG9uc2US",
+            "PwoHZW50cmllcxgBIAMoCzIlLmNyb3VwaWVyLnNlcnZlci52MS5BZ2VudE1l",
+            "dHJpY3NFbnRyeVIHZW50cmllcyKiAQoRQWdlbnRNZXRyaWNzRW50cnkSGQoI",
+            "YWdlbnRfaWQYASABKAlSB2FnZW50SWQSOAoJdGltZXN0YW1wGAIgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdGltZXN0YW1wEjgKB21ldHJp",
+            "Y3MYAyABKAsyHi5jcm91cGllci5vcHMudjEuTWV0cmljc1JlcG9ydFIHbWV0",
+            "cmljczLQBQoOQ29udHJvbFNlcnZpY2USYAoUTGlzdEZ1bmN0aW9uc1N1bW1h",
+            "cnkSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaMC5jcm91cGllci5zZXJ2ZXIu",
+            "djEuTGlzdEZ1bmN0aW9uc1N1bW1hcnlSZXNwb25zZRJVCghSZWdpc3RlchIj",
+            "LmNyb3VwaWVyLnNlcnZlci52MS5SZWdpc3RlclJlcXVlc3QaJC5jcm91cGll",
+            "ci5zZXJ2ZXIudjEuUmVnaXN0ZXJSZXNwb25zZRJYCglIZWFydGJlYXQSJC5j",
+            "cm91cGllci5zZXJ2ZXIudjEuSGVhcnRiZWF0UmVxdWVzdBolLmNyb3VwaWVy",
+            "LnNlcnZlci52MS5IZWFydGJlYXRSZXNwb25zZRJ5ChRSZWdpc3RlckNhcGFi",
+            "aWxpdGllcxIvLmNyb3VwaWVyLnNlcnZlci52MS5SZWdpc3RlckNhcGFiaWxp",
+            "dGllc1JlcXVlc3QaMC5jcm91cGllci5zZXJ2ZXIudjEuUmVnaXN0ZXJDYXBh",
+            "YmlsaXRpZXNSZXNwb25zZRJgChJHZXRBZ2VudFN5c3RlbUluZm8SLS5jcm91",
+            "cGllci5zZXJ2ZXIudjEuR2V0QWdlbnRTeXN0ZW1JbmZvUmVxdWVzdBobLmNy",
+            "b3VwaWVyLm9wcy52MS5TeXN0ZW1JbmZvEmsKEkxpc3RBZ2VudFByb2Nlc3Nl",
+            "cxItLmNyb3VwaWVyLnNlcnZlci52MS5MaXN0QWdlbnRQcm9jZXNzZXNSZXF1",
+            "ZXN0GiYuY3JvdXBpZXIub3BzLnYxLkxpc3RQcm9jZXNzZXNSZXNwb25zZRJh",
+            "CgxRdWVyeU1ldHJpY3MSJy5jcm91cGllci5zZXJ2ZXIudjEuUXVlcnlNZXRy",
+            "aWNzUmVxdWVzdBooLmNyb3VwaWVyLnNlcnZlci52MS5RdWVyeU1ldHJpY3NS",
+            "ZXNwb25zZUJqCiVpby5naXRodWIuY3VpaGFpcnUuY3JvdXBpZXIuc2VydmVy",
+            "LnYxUAFaP2dpdGh1Yi5jb20vY3VpaGFpcnUvY3JvdXBpZXIvcGtnL3BiL2Ny",
+            "b3VwaWVyL3NlcnZlci92MTtzZXJ2ZXJ2MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Croupier.Common.V1.UiReflection.Descriptor, global::Croupier.Ops.V1.OpsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.FunctionDescriptor), global::Croupier.Server.V1.FunctionDescriptor.Parser, new[]{ "Id", "Version", "Category", "Risk", "Entity", "Operation", "Enabled", "DisplayName", "Summary", "Tags", "Menu", "Permissions", "InputSchema", "OutputSchema" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.AgentProcess), global::Croupier.Server.V1.AgentProcess.Parser, new[]{ "ServiceId", "Addr", "Version", "LastSeenUnix", "FunctionIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.RegisterRequest), global::Croupier.Server.V1.RegisterRequest.Parser, new[]{ "AgentId", "Version", "Functions", "RpcAddr", "GameId", "Env", "Processes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.RegisterRequest), global::Croupier.Server.V1.RegisterRequest.Parser, new[]{ "AgentId", "Version", "Functions", "RpcAddr", "GameId", "Env", "Processes", "TtlSeconds", "Region", "Zone", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.RegisterResponse), global::Croupier.Server.V1.RegisterResponse.Parser, new[]{ "SessionId", "ExpireAt" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.HeartbeatRequest), global::Croupier.Server.V1.HeartbeatRequest.Parser, new[]{ "AgentId", "SessionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Croupier.Server.V1.HeartbeatResponse), global::Croupier.Server.V1.HeartbeatResponse.Parser, null, null, null, null, null),
@@ -1251,6 +1255,10 @@ namespace Croupier.Server.V1 {
       gameId_ = other.gameId_;
       env_ = other.env_;
       processes_ = other.processes_.Clone();
+      ttlSeconds_ = other.ttlSeconds_;
+      region_ = other.region_;
+      zone_ = other.zone_;
+      labels_ = other.labels_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1363,6 +1371,65 @@ namespace Croupier.Server.V1 {
       get { return processes_; }
     }
 
+    /// <summary>Field number for the "ttl_seconds" field.</summary>
+    public const int TtlSecondsFieldNumber = 8;
+    private uint ttlSeconds_;
+    /// <summary>
+    /// session TTL (default 300s = 5min)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TtlSeconds {
+      get { return ttlSeconds_; }
+      set {
+        ttlSeconds_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region" field.</summary>
+    public const int RegionFieldNumber = 10;
+    private string region_ = "";
+    /// <summary>
+    /// 新增：位置和标签信息
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Region {
+      get { return region_; }
+      set {
+        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "zone" field.</summary>
+    public const int ZoneFieldNumber = 11;
+    private string zone_ = "";
+    /// <summary>
+    /// availability zone (e.g. "us-west-1a")
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Zone {
+      get { return zone_; }
+      set {
+        zone_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "labels" field.</summary>
+    public const int LabelsFieldNumber = 12;
+    private static readonly pbc::MapField<string, string>.Codec _map_labels_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 98);
+    private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
+    /// <summary>
+    /// system metadata labels (os, arch, hostname, etc.)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Labels {
+      get { return labels_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1385,6 +1452,10 @@ namespace Croupier.Server.V1 {
       if (GameId != other.GameId) return false;
       if (Env != other.Env) return false;
       if(!processes_.Equals(other.processes_)) return false;
+      if (TtlSeconds != other.TtlSeconds) return false;
+      if (Region != other.Region) return false;
+      if (Zone != other.Zone) return false;
+      if (!Labels.Equals(other.Labels)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1399,6 +1470,10 @@ namespace Croupier.Server.V1 {
       if (GameId.Length != 0) hash ^= GameId.GetHashCode();
       if (Env.Length != 0) hash ^= Env.GetHashCode();
       hash ^= processes_.GetHashCode();
+      if (TtlSeconds != 0) hash ^= TtlSeconds.GetHashCode();
+      if (Region.Length != 0) hash ^= Region.GetHashCode();
+      if (Zone.Length != 0) hash ^= Zone.GetHashCode();
+      hash ^= Labels.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1439,6 +1514,19 @@ namespace Croupier.Server.V1 {
         output.WriteString(Env);
       }
       processes_.WriteTo(output, _repeated_processes_codec);
+      if (TtlSeconds != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(TtlSeconds);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Region);
+      }
+      if (Zone.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Zone);
+      }
+      labels_.WriteTo(output, _map_labels_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1471,6 +1559,19 @@ namespace Croupier.Server.V1 {
         output.WriteString(Env);
       }
       processes_.WriteTo(ref output, _repeated_processes_codec);
+      if (TtlSeconds != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(TtlSeconds);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Region);
+      }
+      if (Zone.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Zone);
+      }
+      labels_.WriteTo(ref output, _map_labels_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1498,6 +1599,16 @@ namespace Croupier.Server.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Env);
       }
       size += processes_.CalculateSize(_repeated_processes_codec);
+      if (TtlSeconds != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TtlSeconds);
+      }
+      if (Region.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
+      }
+      if (Zone.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Zone);
+      }
+      size += labels_.CalculateSize(_map_labels_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1527,6 +1638,16 @@ namespace Croupier.Server.V1 {
         Env = other.Env;
       }
       processes_.Add(other.processes_);
+      if (other.TtlSeconds != 0) {
+        TtlSeconds = other.TtlSeconds;
+      }
+      if (other.Region.Length != 0) {
+        Region = other.Region;
+      }
+      if (other.Zone.Length != 0) {
+        Zone = other.Zone;
+      }
+      labels_.MergeFrom(other.labels_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1574,6 +1695,22 @@ namespace Croupier.Server.V1 {
             processes_.AddEntriesFrom(input, _repeated_processes_codec);
             break;
           }
+          case 64: {
+            TtlSeconds = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            Region = input.ReadString();
+            break;
+          }
+          case 90: {
+            Zone = input.ReadString();
+            break;
+          }
+          case 98: {
+            labels_.AddEntriesFrom(input, _map_labels_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1619,6 +1756,22 @@ namespace Croupier.Server.V1 {
           }
           case 58: {
             processes_.AddEntriesFrom(ref input, _repeated_processes_codec);
+            break;
+          }
+          case 64: {
+            TtlSeconds = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            Region = input.ReadString();
+            break;
+          }
+          case 90: {
+            Zone = input.ReadString();
+            break;
+          }
+          case 98: {
+            labels_.AddEntriesFrom(ref input, _map_labels_codec);
             break;
           }
         }
