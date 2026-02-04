@@ -60,9 +60,9 @@ namespace Croupier.Agent.Local.V1 {
             "LmxvY2FsLnYxLkxpc3RMb2NhbFJlc3BvbnNlEmsKDEdldEpvYlJlc3VsdBIs",
             "LmNyb3VwaWVyLmFnZW50LmxvY2FsLnYxLkdldEpvYlJlc3VsdFJlcXVlc3Qa",
             "LS5jcm91cGllci5hZ2VudC5sb2NhbC52MS5HZXRKb2JSZXN1bHRSZXNwb25z",
-            "ZUJ7Cippby5naXRodWIuY3VpaGFpcnUuY3JvdXBpZXIuYWdlbnQubG9jYWwu",
-            "djFQAVpLZ2l0aHViLmNvbS9jdWloYWlydS9jcm91cGllci9zZGtzL2dvL3Br",
-            "Zy9wYi9jcm91cGllci9hZ2VudC9sb2NhbC92MTtsb2NhbHYxYgZwcm90bzM="));
+            "ZUJzCippby5naXRodWIuY3VpaGFpcnUuY3JvdXBpZXIuYWdlbnQubG9jYWwu",
+            "djFQAVpDZ2l0aHViLmNvbS9jdWloYWlydS9jcm91cGllci9wa2cvcGIvY3Jv",
+            "dXBpZXIvYWdlbnQvbG9jYWwvdjE7bG9jYWx2MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

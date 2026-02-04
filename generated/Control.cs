@@ -51,10 +51,10 @@ namespace Croupier.Control.V1 {
             "b250cm9sLnYxLkhlYXJ0YmVhdFJlc3BvbnNlEnsKFFJlZ2lzdGVyQ2FwYWJp",
             "bGl0aWVzEjAuY3JvdXBpZXIuY29udHJvbC52MS5SZWdpc3RlckNhcGFiaWxp",
             "dGllc1JlcXVlc3QaMS5jcm91cGllci5jb250cm9sLnYxLlJlZ2lzdGVyQ2Fw",
-            "YWJpbGl0aWVzUmVzcG9uc2VCdQomaW8uZ2l0aHViLmN1aWhhaXJ1LmNyb3Vw",
-            "aWVyLmNvbnRyb2wudjFQAVpJZ2l0aHViLmNvbS9jdWloYWlydS9jcm91cGll",
-            "ci9zZGtzL2dvL3BrZy9wYi9jcm91cGllci9jb250cm9sL3YxO2NvbnRyb2x2",
-            "MWIGcHJvdG8z"));
+            "YWJpbGl0aWVzUmVzcG9uc2VCbQomaW8uZ2l0aHViLmN1aWhhaXJ1LmNyb3Vw",
+            "aWVyLmNvbnRyb2wudjFQAVpBZ2l0aHViLmNvbS9jdWloYWlydS9jcm91cGll",
+            "ci9wa2cvcGIvY3JvdXBpZXIvY29udHJvbC92MTtjb250cm9sdjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
