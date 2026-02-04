@@ -63,3 +63,6 @@ src/Gen/*.cs
 proto/buf.yaml
 buf.gen.yaml
 buf.lock
+
+# macOS
+.DS_Store
