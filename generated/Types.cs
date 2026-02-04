@@ -46,9 +46,10 @@ namespace Croupier.Sdk.V1 {
             "YlN0YXR1cxIaChZKT0JfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSSk9CX1NU",
             "QVRVU19QRU5ESU5HEAESFgoSSk9CX1NUQVRVU19SVU5OSU5HEAISGAoUSk9C",
             "X1NUQVRVU19DT01QTEVURUQQAxIVChFKT0JfU1RBVFVTX0ZBSUxFRBAEEhgK",
-            "FEpPQl9TVEFUVVNfQ0FOQ0VMTEVEEAVCYQoiaW8uZ2l0aHViLmN1aWhhaXJ1",
-            "LmNyb3VwaWVyLnNkay52MVABWjlnaXRodWIuY29tL2N1aWhhaXJ1L2Nyb3Vw",
-            "aWVyL3BrZy9wYi9jcm91cGllci9zZGsvdjE7c2RrdjFiBnByb3RvMw=="));
+            "FEpPQl9TVEFUVVNfQ0FOQ0VMTEVEEAVCaQoiaW8uZ2l0aHViLmN1aWhhaXJ1",
+            "LmNyb3VwaWVyLnNkay52MVABWkFnaXRodWIuY29tL2N1aWhhaXJ1L2Nyb3Vw",
+            "aWVyL3Nka3MvZ28vcGtnL3BiL2Nyb3VwaWVyL3Nkay92MTtzZGt2MWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Croupier.Sdk.V1.JobStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
