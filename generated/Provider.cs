@@ -49,18 +49,9 @@ namespace Croupier.Sdk.V1 {
             "ZnVuY3Rpb25zIiwKE0dldEpvYlJlc3VsdFJlcXVlc3QSFQoGam9iX2lkGAEg",
             "ASgJUgVqb2JJZCJcChRHZXRKb2JSZXN1bHRSZXNwb25zZRIUCgVzdGF0ZRgB",
             "IAEoCVIFc3RhdGUSGAoHcGF5bG9hZBgCIAEoDFIHcGF5bG9hZBIUCgVlcnJv",
-            "chgDIAEoCVIFZXJyb3Iy+gIKE0xvY2FsQ29udHJvbFNlcnZpY2USXgoNUmVn",
-            "aXN0ZXJMb2NhbBIlLmNyb3VwaWVyLnNkay52MS5SZWdpc3RlckxvY2FsUmVx",
-            "dWVzdBomLmNyb3VwaWVyLnNkay52MS5SZWdpc3RlckxvY2FsUmVzcG9uc2US",
-            "UgoJSGVhcnRiZWF0EiEuY3JvdXBpZXIuc2RrLnYxLkhlYXJ0YmVhdFJlcXVl",
-            "c3QaIi5jcm91cGllci5zZGsudjEuSGVhcnRiZWF0UmVzcG9uc2USUgoJTGlz",
-            "dExvY2FsEiEuY3JvdXBpZXIuc2RrLnYxLkxpc3RMb2NhbFJlcXVlc3QaIi5j",
-            "cm91cGllci5zZGsudjEuTGlzdExvY2FsUmVzcG9uc2USWwoMR2V0Sm9iUmVz",
-            "dWx0EiQuY3JvdXBpZXIuc2RrLnYxLkdldEpvYlJlc3VsdFJlcXVlc3QaJS5j",
-            "cm91cGllci5zZGsudjEuR2V0Sm9iUmVzdWx0UmVzcG9uc2VCYQoiaW8uZ2l0",
-            "aHViLmN1aWhhaXJ1LmNyb3VwaWVyLnNkay52MVABWjlnaXRodWIuY29tL2N1",
-            "aWhhaXJ1L2Nyb3VwaWVyL3BrZy9wYi9jcm91cGllci9zZGsvdjE7c2RrdjFi",
-            "BnByb3RvMw=="));
+            "chgDIAEoCVIFZXJyb3JCYQoiaW8uZ2l0aHViLmN1aWhhaXJ1LmNyb3VwaWVy",
+            "LnNkay52MVABWjlnaXRodWIuY29tL2N1aWhhaXJ1L2Nyb3VwaWVyL3BrZy9w",
+            "Yi9jcm91cGllci9zZGsvdjE7c2RrdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
