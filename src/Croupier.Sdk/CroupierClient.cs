@@ -16,9 +16,9 @@ using System.Collections.Concurrent;
 using System.Threading.Channels;
 using Croupier.Sdk.Logging;
 using Croupier.Sdk.Models;
-using Grpc.Net.Client;
+using Croupier.Sdk.Transport;
+using Croupier.Sdk.V1;
 using Microsoft.Extensions.Logging;
-using System.Net.Http;
 
 namespace Croupier.Sdk;
 
@@ -34,7 +34,8 @@ public partial class CroupierClient : IDisposable
     private readonly CancellationTokenSource _shutdownCts;
     private readonly Channel<FunctionCallTask> _callChannel;
 
-    private GrpcChannel? _agentChannel;
+    private NNGTransport? _transport;
+    private NNGServer? _server;
     private bool _isConnected;
     private bool _isDisposed;
     private Task? _processTask;
@@ -47,7 +48,7 @@ public partial class CroupierClient : IDisposable
     /// <summary>
     /// 是否已连接
     /// </summary>
-    public bool IsConnected => _isConnected && _agentChannel != null;
+    public bool IsConnected => _isConnected && _transport != null;
 
     /// <summary>
     /// 本地监听地址
@@ -99,35 +100,22 @@ public partial class CroupierClient : IDisposable
 
         try
         {
-            // 创建 gRPC 通道
-            GrpcChannelOptions channelOptions = new()
-            {
-                MaxSendMessageSize = _config.MaxMessageSize,
-                MaxReceiveMessageSize = _config.MaxMessageSize,
-            };
+            // Create NNG transport
+            var address = _config.AgentAddr.StartsWith("tcp://") ? _config.AgentAddr : $"tcp://{_config.AgentAddr}";
+            _transport = new NNGTransport(address, _config.TimeoutSeconds * 1000, _logger);
+            _transport.Connect();
 
-            // 配置不安全连接（跳过 TLS 验证）
-            if (_config.Insecure)
-            {
-                channelOptions.HttpHandler = new HttpClientHandler
-                {
-                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-                };
-            }
-
-            var scheme = _config.Insecure ? "http" : "https";
-            _agentChannel = GrpcChannel.ForAddress($"{scheme}://{_config.AgentAddr}", channelOptions);
-
-            // 连接并注册服务
-            // TODO: 实现 gRPC 服务注册逻辑
+            // TODO: Implement service registration via NNG
 
             _isConnected = true;
             LocalAddress = _config.LocalAddr;
 
             _logger.LogInfo("CroupierClient", $"Connected successfully. Local address: {LocalAddress}");
 
-            // 启动消息处理循环
-            _processTask = Task.Run(() => ProcessCallsAsync(_shutdownCts.Token));
+            // Start message processing loop
+            _processTask = Task.Run(() => ProcessCallsAsync(_shutdownCts.Token), cancellationToken);
+
+            await Task.CompletedTask;
         }
         catch (Exception ex)
         {
@@ -160,8 +148,10 @@ public partial class CroupierClient : IDisposable
             // Expected
         }
 
-        _agentChannel?.Dispose();
-        _agentChannel = null;
+        _transport?.Dispose();
+        _transport = null;
+        _server?.Dispose();
+        _server = null;
 
         _logger.LogInfo("CroupierClient", "Disconnected");
     }
@@ -244,12 +234,65 @@ public partial class CroupierClient : IDisposable
 
         _logger.LogInfo("CroupierClient", "Starting service...");
 
-        // TODO: 启动 gRPC 服务端，监听来自 Agent 的函数调用
+        // Start NNG server for receiving function calls from Agent
+        var listenAddr = _config.LocalAddr ?? "tcp://127.0.0.1:0";
+        _server = new NNGServer(listenAddr, _config.TimeoutSeconds * 1000, _logger);
+        _server.RequestReceived += OnRequestReceived;
+        _server.Listen();
 
-        // 等待关闭信号
+        LocalAddress = listenAddr;
+        _logger.LogInfo("CroupierClient", $"Server listening on: {LocalAddress}");
+
+        // Wait for shutdown signal
         await Task.Delay(Timeout.Infinite, cancellationToken);
 
         _logger.LogInfo("CroupierClient", "Service stopped");
+    }
+
+    /// <summary>
+    /// Handle incoming request from Agent.
+    /// </summary>
+    private void OnRequestReceived(object? sender, RequestReceivedEventArgs e)
+    {
+        _logger.LogDebug("CroupierClient", $"Received request type={Protocol.MsgIdString(e.MsgId)}");
+
+        try
+        {
+            if (e.MsgId == Protocol.MsgInvokeRequest)
+            {
+                var request = InvokeRequest.Parser.ParseFrom(e.Body);
+                var task = new FunctionCallTask
+                {
+                    FunctionId = request.FunctionId,
+                    CallId = Guid.NewGuid().ToString("N"),
+                    GameId = _config.GameId,
+                    Env = _config.Env,
+                    Payload = request.Payload.ToStringUtf8(),
+                    IdempotencyKey = request.IdempotencyKey
+                };
+
+                var result = ProcessFunctionCallAsync(task).GetAwaiter().GetResult();
+
+                var response = new InvokeResponse
+                {
+                    Payload = Google.Protobuf.ByteString.CopyFromUtf8(result)
+                };
+                e.Response = response.ToByteArray();
+            }
+            else
+            {
+                _logger.LogWarning("CroupierClient", $"Unknown message type: {e.MsgId}");
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError("CroupierClient", $"Error handling request: {ex.Message}", ex);
+            var errorResponse = new InvokeResponse
+            {
+                Payload = Google.Protobuf.ByteString.CopyFromUtf8($"{{\"error\":\"{ex.Message}\"}}")
+            };
+            e.Response = errorResponse.ToByteArray();
+        }
     }
 
     /// <summary>
@@ -276,10 +319,41 @@ public partial class CroupierClient : IDisposable
 
         _logger.LogDebug("CroupierInvoker", $"Invoking {functionId}");
 
-        // TODO: 实现 gRPC 调用逻辑
-        await Task.CompletedTask;
+        if (_transport == null || !_transport.IsConnected)
+        {
+            throw new InvalidOperationException("Not connected to Agent");
+        }
 
-        return "{\"status\":\"ok\"}";
+        // Build protobuf request
+        var request = new InvokeRequest
+        {
+            FunctionId = functionId,
+            Payload = Google.Protobuf.ByteString.CopyFromUtf8(payload)
+        };
+
+        if (!string.IsNullOrEmpty(options.IdempotencyKey))
+        {
+            request.IdempotencyKey = options.IdempotencyKey;
+        }
+
+        if (options.Metadata != null)
+        {
+            foreach (var kvp in options.Metadata)
+            {
+                request.Metadata.Add(kvp.Key, kvp.Value);
+            }
+        }
+
+        // Send via NNG
+        var requestData = request.ToByteArray();
+        var responseData = await _transport.CallAsync(
+            Protocol.MsgInvokeRequest,
+            requestData,
+            cancellationToken);
+
+        // Parse response
+        var response = InvokeResponse.Parser.ParseFrom(responseData);
+        return response.Payload.ToStringUtf8();
     }
 
     /// <summary>

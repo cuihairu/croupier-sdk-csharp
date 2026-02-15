@@ -28,6 +28,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+
+    <!-- Test Ordering -->
+    <PackageReference Include="Xunit.Priority" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

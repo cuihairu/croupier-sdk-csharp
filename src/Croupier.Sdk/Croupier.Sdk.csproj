@@ -7,10 +7,11 @@
     <RootNamespace>Croupier.Sdk</RootNamespace>
     <Version>0.1.0</Version>
     <Authors>Croupier Project</Authors>
-    <Description>Croupier SDK for .NET 8+</Description>
+    <Description>Croupier SDK for .NET 8+ with NNG Transport</Description>
     <RepositoryUrl>https://github.com/cuihairu/croupier-sdk-csharp</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>CS1591</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <!-- Allow test project to access internal members -->
@@ -21,11 +22,11 @@
   <!-- ============================================================================ -->
   <!-- 版本锁定 - 必须与 croupier-proto/CLAUDE.md 保持一致！ -->
   <!-- Google.Protobuf 3.25.1 对应 protoc-csharp v25.1 -->
-  <!-- Grpc.Net.Client 2.71.0 对应 grpc-csharp v1.71.0 -->
+  <!-- NNG transport replaces gRPC -->
   <!-- ============================================================================ -->
   <ItemGroup>
-    <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
     <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+    <PackageReference Include="nng.NET" Version="1.4.0-rc0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />

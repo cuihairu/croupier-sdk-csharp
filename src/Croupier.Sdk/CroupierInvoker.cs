@@ -12,11 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Collections.Concurrent;
-using System.Net.Http;
 using Croupier.Sdk.Logging;
 using Croupier.Sdk.Models;
-using Grpc.Net.Client;
+using Croupier.Sdk.Transport;
+using Croupier.Sdk.V1;
 using Microsoft.Extensions.Logging;
 
 namespace Croupier.Sdk;
@@ -30,9 +29,9 @@ public class CroupierInvoker : IDisposable
     private readonly string _gameId;
     private readonly string _env;
     private readonly ICroupierLogger _logger;
-    private readonly bool _insecure;
-    private readonly ConcurrentDictionary<string, GrpcChannel> _channels;
+    private readonly int _timeoutMs;
 
+    private NNGTransport? _transport;
     private bool _isDisposed;
 
     /// <summary>
@@ -53,24 +52,23 @@ public class CroupierInvoker : IDisposable
     /// <summary>
     /// 创建调用器实例
     /// </summary>
-    /// <param name="agentAddr">Agent 地址</param>
+    /// <param name="agentAddr">Agent 地址 (e.g., "tcp://127.0.0.1:19090")</param>
     /// <param name="gameId">游戏 ID</param>
     /// <param name="env">环境</param>
-    /// <param name="insecure">是否使用不安全连接</param>
+    /// <param name="timeoutMs">超时时间（毫秒）</param>
     /// <param name="logger">日志记录器</param>
     public CroupierInvoker(
-        string agentAddr = "127.0.0.1:19090",
+        string agentAddr = "tcp://127.0.0.1:19090",
         string? gameId = null,
         string? env = null,
-        bool insecure = false,
+        int timeoutMs = 5000,
         ICroupierLogger? logger = null)
     {
         _agentAddr = agentAddr;
         _gameId = gameId ?? "default-game";
         _env = env ?? "dev";
-        _insecure = insecure;
+        _timeoutMs = timeoutMs;
         _logger = logger ?? new ConsoleCroupierLogger("Invoker");
-        _channels = new ConcurrentDictionary<string, GrpcChannel>();
 
         _logger.LogInfo("CroupierInvoker", $"Invoker created for {_gameId}/{_env}");
     }
@@ -85,7 +83,7 @@ public class CroupierInvoker : IDisposable
             config.AgentAddr,
             config.GameId,
             config.Env,
-            config.Insecure,
+            config.TimeoutSeconds * 1000,
             logger)
     {
     }
@@ -102,7 +100,7 @@ public class CroupierInvoker : IDisposable
         string gameId,
         string env,
         ILogger logger)
-        : this(agentAddr, gameId, env, false, new CroupierLogger(logger))
+        : this(agentAddr, gameId, env, 5000, new CroupierLogger(logger))
     {
     }
 
@@ -134,19 +132,45 @@ public class CroupierInvoker : IDisposable
         {
             _logger.LogDebug("CroupierInvoker", $"Invoking {functionId}");
 
-            // TODO: 实现实际的 gRPC 调用
-            // 1. 获取或创建 gRPC 通道
-            // 2. 创建 FunctionService 客户端
-            // 3. 调用 Invoke 方法
-            // 4. 处理响应
+            // Ensure transport is connected
+            EnsureTransportConnected();
 
-            await Task.Delay(10, cancellationToken); // 模拟网络延迟
+            // Build protobuf request
+            var request = new InvokeRequest
+            {
+                FunctionId = functionId,
+                Payload = Google.Protobuf.ByteString.CopyFromUtf8(payload)
+            };
+
+            if (!string.IsNullOrEmpty(options.IdempotencyKey))
+            {
+                request.IdempotencyKey = options.IdempotencyKey;
+            }
+
+            if (options.Metadata != null)
+            {
+                foreach (var kvp in options.Metadata)
+                {
+                    request.Metadata.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            // Serialize and send via NNG
+            var requestData = request.ToByteArray();
+            var responseData = await _transport!.CallAsync(
+                Protocol.MsgInvokeRequest,
+                requestData,
+                cancellationToken);
+
+            // Parse response
+            var response = InvokeResponse.Parser.ParseFrom(responseData);
+            var resultPayload = response.Payload.ToStringUtf8();
 
             var duration = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
 
             _logger.LogDebug("CroupierInvoker", $"Invoke {functionId} completed ({duration}ms)");
 
-            return InvokeResult.Succeeded("{\"status\":\"ok\"}", duration);
+            return InvokeResult.Succeeded(resultPayload, duration);
         }
         catch (OperationCanceledException)
         {
@@ -159,6 +183,22 @@ public class CroupierInvoker : IDisposable
             var duration = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
             _logger.LogError("CroupierInvoker", $"Invoke {functionId} failed: {ex.Message}", ex);
             return InvokeResult.Failed(ex.Message, null, duration);
+        }
+    }
+
+    /// <summary>
+    /// Ensure transport is connected.
+    /// </summary>
+    private void EnsureTransportConnected()
+    {
+        if (_transport == null)
+        {
+            _transport = new NNGTransport(_agentAddr, _timeoutMs, _logger);
+            _transport.Connect();
+        }
+        else if (!_transport.IsConnected)
+        {
+            _transport.Connect();
         }
     }
 
@@ -210,13 +250,32 @@ public class CroupierInvoker : IDisposable
 
         _logger.LogDebug("CroupierInvoker", $"Starting job: {functionId}");
 
-        // TODO: 实现实际的异步任务启动
-        await Task.CompletedTask;
+        // Ensure transport is connected
+        EnsureTransportConnected();
 
-        var jobId = $"job_{DateTime.UtcNow.Ticks}";
-        _logger.LogInfo("CroupierInvoker", $"Job started: {jobId}");
+        // Build protobuf request
+        var request = new InvokeRequest
+        {
+            FunctionId = functionId,
+            Payload = Google.Protobuf.ByteString.CopyFromUtf8(payload)
+        };
 
-        return jobId;
+        if (!string.IsNullOrEmpty(options.IdempotencyKey))
+        {
+            request.IdempotencyKey = options.IdempotencyKey;
+        }
+
+        // Send via NNG
+        var requestData = request.ToByteArray();
+        var responseData = await _transport!.CallAsync(
+            Protocol.MsgStartJobRequest,
+            requestData);
+
+        // Parse response
+        var response = StartJobResponse.Parser.ParseFrom(responseData);
+        _logger.LogInfo("CroupierInvoker", $"Job started: {response.JobId}");
+
+        return response.JobId;
     }
 
     /// <summary>
@@ -233,9 +292,23 @@ public class CroupierInvoker : IDisposable
 
         _logger.LogDebug("CroupierInvoker", $"Canceling job: {jobId}");
 
-        // TODO: 实现实际的任务取消
-        await Task.CompletedTask;
+        // Ensure transport is connected
+        EnsureTransportConnected();
 
+        // Build protobuf request
+        var request = new CancelJobRequest
+        {
+            JobId = jobId
+        };
+
+        // Send via NNG
+        var requestData = request.ToByteArray();
+        await _transport!.CallAsync(
+            Protocol.MsgCancelJobRequest,
+            requestData,
+            cancellationToken);
+
+        _logger.LogInfo("CroupierInvoker", $"Job canceled: {jobId}");
         return true;
     }
 
@@ -251,42 +324,33 @@ public class CroupierInvoker : IDisposable
     {
         ThrowIfDisposed();
 
-        // TODO: 实现实际的任务状态查询
-        await Task.CompletedTask;
+        // Ensure transport is connected
+        EnsureTransportConnected();
+
+        // Build protobuf request
+        var request = new JobStreamRequest
+        {
+            JobId = jobId
+        };
+
+        // Send via NNG
+        var requestData = request.ToByteArray();
+        var responseData = await _transport!.CallAsync(
+            Protocol.MsgStreamJobRequest,
+            requestData,
+            cancellationToken);
+
+        // Parse response
+        var jobEvent = JobEvent.Parser.ParseFrom(responseData);
 
         return new JobStatus
         {
             JobId = jobId,
-            Status = "running",
-            Progress = 0.5
+            Status = jobEvent.Type.ToLower(),
+            Progress = jobEvent.Progress,
+            Message = jobEvent.Message,
+            Result = jobEvent.Payload.Length > 0 ? jobEvent.Payload.ToStringUtf8() : null
         };
-    }
-
-    /// <summary>
-    /// 获取或创建 gRPC 通道
-    /// </summary>
-    private GrpcChannel GetOrCreateChannel()
-    {
-        return _channels.GetOrAdd(_agentAddr, addr =>
-        {
-            GrpcChannelOptions options = new()
-            {
-                MaxSendMessageSize = 4 * 1024 * 1024,
-                MaxReceiveMessageSize = 4 * 1024 * 1024,
-            };
-
-            if (_insecure)
-            {
-                options.HttpHandler = new HttpClientHandler
-                {
-                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-                };
-            }
-
-            _logger.LogDebug("CroupierInvoker", $"Creating gRPC channel to {addr}");
-            var scheme = _insecure ? "http" : "https";
-            return GrpcChannel.ForAddress($"{scheme}://{addr}", options);
-        });
     }
 
     private void ThrowIfDisposed()
@@ -305,11 +369,8 @@ public class CroupierInvoker : IDisposable
 
         _logger.LogInfo("CroupierInvoker", "Disposing...");
 
-        foreach (var channel in _channels.Values)
-        {
-            channel.Dispose();
-        }
-        _channels.Clear();
+        _transport?.Dispose();
+        _transport = null;
 
         _isDisposed = true;
         GC.SuppressFinalize(this);
@@ -356,6 +417,11 @@ public class JobStatus
     /// 进度 (0.0 - 1.0)
     /// </summary>
     public double Progress { get; init; }
+
+    /// <summary>
+    /// 消息
+    /// </summary>
+    public string? Message { get; init; }
 
     /// <summary>
     /// 错误信息（如果失败）
