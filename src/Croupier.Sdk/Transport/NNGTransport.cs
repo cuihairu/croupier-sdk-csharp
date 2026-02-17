@@ -69,11 +69,34 @@ public sealed class NNGTransport : IDisposable
 
             try
             {
-                // Initialize NNG factory
-                var path = System.IO.Path.GetDirectoryName(typeof(NNGTransport).Assembly.Location)
-                    ?? AppDomain.CurrentDomain.BaseDirectory;
-                var ctx = new nng.Native.NngLoadContext(path);
-                _factory = nng.Native.NngLoadContext.Init(ctx);
+                // Initialize NNG using reflection to handle API version differences
+                var assembly = System.Reflection.Assembly.GetAssembly(typeof(nng.Native.nng)!
+                    ?? AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "nng.NET"));
+
+                if (assembly == null)
+                {
+                    throw new InvalidOperationException("Failed to find nng.NET assembly");
+                }
+
+                // Try to find the factory initialization method
+                var factoryType = assembly.GetType("nng.Native.NngFactory")
+                    ?? assembly.GetType("nng.NngFactory");
+
+                if (factoryType == null)
+                {
+                    throw new InvalidOperationException("Failed to find NngFactory type");
+                }
+
+                // Create factory instance
+                var factoryMethod = factoryType.GetMethod("Create", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                    ?? factoryType.GetMethod("Init", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+                if (factoryMethod == null)
+                {
+                    throw new InvalidOperationException("Failed to find factory creation method");
+                }
+
+                _factory = factoryMethod.Invoke(null, null);
 
                 if (_factory == null)
                 {
@@ -300,11 +323,34 @@ public sealed class NNGServer : IDisposable
 
             try
             {
-                // Initialize NNG factory
-                var path = System.IO.Path.GetDirectoryName(typeof(NNGServer).Assembly.Location)
-                    ?? AppDomain.CurrentDomain.BaseDirectory;
-                var ctx = new nng.Native.NngLoadContext(path);
-                _factory = nng.Native.NngLoadContext.Init(ctx);
+                // Initialize NNG using reflection to handle API version differences
+                var assembly = System.Reflection.Assembly.GetAssembly(typeof(nng.Native.nng)!
+                    ?? AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "nng.NET");
+
+                if (assembly == null)
+                {
+                    throw new InvalidOperationException("Failed to find nng.NET assembly");
+                }
+
+                // Try to find the factory initialization method
+                var factoryType = assembly.GetType("nng.Native.NngFactory")
+                    ?? assembly.GetType("nng.NngFactory");
+
+                if (factoryType == null)
+                {
+                    throw new InvalidOperationException("Failed to find NngFactory type");
+                }
+
+                // Create factory instance
+                var factoryMethod = factoryType.GetMethod("Create", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                    ?? factoryType.GetMethod("Init", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+                if (factoryMethod == null)
+                {
+                    throw new InvalidOperationException("Failed to find factory creation method");
+                }
+
+                _factory = factoryMethod.Invoke(null, null);
 
                 if (_factory == null)
                 {
