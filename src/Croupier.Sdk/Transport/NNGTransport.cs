@@ -70,8 +70,8 @@ public sealed class NNGTransport : IDisposable
             try
             {
                 // Initialize NNG using reflection to handle API version differences
-                var assembly = System.Reflection.Assembly.GetAssembly(typeof(nng.Native.nng)!
-                    ?? AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "nng.NET"));
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET");
 
                 if (assembly == null)
                 {
@@ -104,7 +104,7 @@ public sealed class NNGTransport : IDisposable
                 }
 
                 // Create REQ socket and dial
-                var result = _factory.RequesterOpen().ThenDial(_address);
+                dynamic result = _factory.RequesterOpen().ThenDial(_address);
                 if (result.IsOk())
                 {
                     _socket = result.Ok();
