@@ -19,6 +19,11 @@
     <InternalsVisibleTo Include="Croupier.Sdk.Tests" />
   </ItemGroup>
 
+  <!-- Include generated protobuf files -->
+  <ItemGroup>
+    <Compile Include="../../generated/*.cs" LinkBase="V1" />
+  </ItemGroup>
+
   <!-- ============================================================================ -->
   <!-- 版本锁定 - 必须与 croupier-proto/CLAUDE.md 保持一致！ -->
   <!-- Google.Protobuf 3.25.1 对应 protoc-csharp v25.1 -->

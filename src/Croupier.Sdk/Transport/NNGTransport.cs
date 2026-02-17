@@ -27,8 +27,8 @@ public sealed class NNGTransport : IDisposable
     private readonly ICroupierLogger _logger;
     private readonly object _lock = new();
 
-    private nng.Native.IAPIFactory? _factory;
-    private nng.Native.ISocket? _socket;
+    private nng.IApiFactory? _factory;
+    private nng.ISocket? _socket;
     private bool _connected;
     private int _requestId;
     private bool _isDisposed;
@@ -252,8 +252,8 @@ public sealed class NNGServer : IDisposable
     private readonly ICroupierLogger _logger;
     private readonly object _lock = new();
 
-    private nng.Native.IAPIFactory? _factory;
-    private nng.Native.ISocket? _socket;
+    private nng.IApiFactory? _factory;
+    private nng.ISocket? _socket;
     private bool _isListening;
     private bool _isDisposed;
     private CancellationTokenSource? _listenCts;
