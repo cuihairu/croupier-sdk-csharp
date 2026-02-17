@@ -26,9 +26,8 @@ public static class ProtobufExtensions
     /// </summary>
     public static byte[] ToByteArray(this IMessage message)
     {
-        byte[] buffer = new byte[message.CalculateSize()];
-        Google.Protobuf.CodedOutputStream outputStream = new Google.Protobuf.CodedOutputStream(buffer);
-        message.WriteTo(outputStream);
-        return buffer;
+        using var ms = new System.IO.MemoryStream();
+        message.WriteTo(ms);
+        return ms.ToArray();
     }
 }

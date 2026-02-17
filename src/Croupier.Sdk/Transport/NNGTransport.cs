@@ -324,8 +324,8 @@ public sealed class NNGServer : IDisposable
             try
             {
                 // Initialize NNG using reflection to handle API version differences
-                var assembly = System.Reflection.Assembly.GetAssembly(typeof(nng.Native.nng)!
-                    ?? AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "nng.NET");
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET");
 
                 if (assembly == null)
                 {
@@ -358,7 +358,7 @@ public sealed class NNGServer : IDisposable
                 }
 
                 // Create REP socket and listen
-                var result = _factory.ReplierOpen().ThenListenAs(out var listener, _address);
+                dynamic result = _factory.ReplierOpen().ThenListen(_address);
                 if (result.IsOk())
                 {
                     _socket = result.Ok();
