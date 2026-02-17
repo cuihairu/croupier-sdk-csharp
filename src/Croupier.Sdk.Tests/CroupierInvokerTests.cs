@@ -79,7 +79,7 @@ public class CroupierInvokerTests
             agentAddr: "192.168.1.100:9090",
             gameId: "custom-game",
             env: "production",
-            insecure: true);
+            timeoutMs: 10000);
 
         // Assert
         invoker.AgentAddr.Should().Be("192.168.1.100:9090");
