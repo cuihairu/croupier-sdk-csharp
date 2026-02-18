@@ -75,9 +75,34 @@ public sealed class NNGTransport : IDisposable
                     ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
                     ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
 
+                // If not found in loaded assemblies, try to load it
                 if (assembly == null)
                 {
-                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET");
+                    try
+                    {
+                        assembly = System.Reflection.Assembly.Load("nng.NET.Shared");
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            assembly = System.Reflection.Assembly.Load("nng.NET");
+                        }
+                        catch
+                        {
+                            // Try to load from known NuGet package path
+                            var nugetPath = Path.Combine(AppContext.BaseDirectory, "nng.NET.Shared.dll");
+                            if (File.Exists(nugetPath))
+                            {
+                                assembly = System.Reflection.Assembly.LoadFrom(nugetPath);
+                            }
+                        }
+                    }
+                }
+
+                if (assembly == null)
+                {
+                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET. Make sure the nng.NET NuGet package is installed.");
                 }
 
                 // Try to find the factory initialization method
@@ -331,9 +356,34 @@ public sealed class NNGServer : IDisposable
                     ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
                     ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
 
+                // If not found in loaded assemblies, try to load it
                 if (assembly == null)
                 {
-                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET");
+                    try
+                    {
+                        assembly = System.Reflection.Assembly.Load("nng.NET.Shared");
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            assembly = System.Reflection.Assembly.Load("nng.NET");
+                        }
+                        catch
+                        {
+                            // Try to load from known NuGet package path
+                            var nugetPath = Path.Combine(AppContext.BaseDirectory, "nng.NET.Shared.dll");
+                            if (File.Exists(nugetPath))
+                            {
+                                assembly = System.Reflection.Assembly.LoadFrom(nugetPath);
+                            }
+                        }
+                    }
+                }
+
+                if (assembly == null)
+                {
+                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET. Make sure the nng.NET NuGet package is installed.");
                 }
 
                 // Try to find the factory initialization method

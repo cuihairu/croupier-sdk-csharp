@@ -15,6 +15,7 @@
 using Croupier.Sdk.Transport;
 using Xunit;
 using Xunit.Priority;
+using System.Reflection;
 
 namespace Croupier.Sdk.Tests.Transport;
 
@@ -29,6 +30,42 @@ public class NNGTransportTests : IDisposable
     private NNGServer? _server;
     private NNGTransport? _client;
 
+    private static bool IsNNGAvailable()
+    {
+        try
+        {
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET.Shared")
+                ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
+                ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
+
+            if (assembly == null)
+            {
+                try
+                {
+                    assembly = Assembly.Load("nng.NET.Shared");
+                }
+                catch
+                {
+                    try
+                    {
+                        assembly = Assembly.Load("nng.NET");
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return assembly != null;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     public void Dispose()
     {
         _client?.Dispose();
@@ -38,6 +75,12 @@ public class NNGTransportTests : IDisposable
     [Fact, Priority(1)]
     public void Constructor_ShouldInitializeCorrectly()
     {
+        if (!IsNNGAvailable())
+        {
+            Skip.Throw("NNG native library not available");
+            return;
+        }
+
         var transport = new NNGTransport("tcp://127.0.0.1:19090");
 
         Assert.False(transport.IsConnected);
@@ -46,6 +89,12 @@ public class NNGTransportTests : IDisposable
     [Fact, Priority(1)]
     public void Constructor_WithCustomTimeout_ShouldUseTimeout()
     {
+        if (!IsNNGAvailable())
+        {
+            Skip.Throw("NNG native library not available");
+            return;
+        }
+
         var transport = new NNGTransport("tcp://127.0.0.1:19090", 10000);
 
         Assert.False(transport.IsConnected);
