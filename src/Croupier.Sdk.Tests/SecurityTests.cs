@@ -655,10 +655,10 @@ public class SecurityTests
     public void UrlEncoding_Works()
     {
         // Arrange
-        var unsafe = "test data!@#$";
+        var unsafeInput = "test data!@#$";
 
         // Act
-        var encoded = Uri.EscapeDataString(unsafe);
+        var encoded = Uri.EscapeDataString(unsafeInput);
 
         // Assert
         encoded.Should().MatchRegex("(test%20|test\\+data)");
