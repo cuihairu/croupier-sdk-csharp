@@ -71,11 +71,13 @@ public sealed class NNGTransport : IDisposable
             {
                 // Initialize NNG using reflection to handle API version differences
                 var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET");
+                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET.Shared")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
 
                 if (assembly == null)
                 {
-                    throw new InvalidOperationException("Failed to find nng.NET assembly");
+                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET");
                 }
 
                 // Try to find the factory initialization method
@@ -325,11 +327,13 @@ public sealed class NNGServer : IDisposable
             {
                 // Initialize NNG using reflection to handle API version differences
                 var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET");
+                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET.Shared")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
 
                 if (assembly == null)
                 {
-                    throw new InvalidOperationException("Failed to find nng.NET assembly");
+                    throw new InvalidOperationException("Failed to find nng.NET assembly. Tried: nng.NET.Shared, nng.NET");
                 }
 
                 // Try to find the factory initialization method
