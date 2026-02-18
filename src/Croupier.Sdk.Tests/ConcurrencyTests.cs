@@ -330,7 +330,7 @@ public class ConcurrencyTests
             productionComplete = true;
         });
 
-        var consumer = Task.Run(() =>
+        var consumer = Task.Run(async () =>
         {
             while (!productionComplete || !queue.IsEmpty)
             {
