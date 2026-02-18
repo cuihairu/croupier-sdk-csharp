@@ -102,7 +102,7 @@ public class EdgeCaseTests
     public void InvokeResult_CanBeCreatedWithNullData()
     {
         // Arrange & Act
-        var result = InvokeResult.Succeeded(null);
+        var result = InvokeResult.Succeeded(null!);
 
         // Assert
         result.Success.Should().BeTrue();
@@ -136,7 +136,7 @@ public class EdgeCaseTests
     public void InvokeResult_Failed_WithNullErrorMessage_IsAllowed()
     {
         // Arrange & Act
-        var result = InvokeResult.Failed(null);
+        var result = InvokeResult.Failed(null!);
 
         // Assert
         result.Success.Should().BeFalse();
@@ -186,21 +186,27 @@ public class EdgeCaseTests
     public void FunctionContext_DefaultValues_AreEmptyOrNull()
     {
         // Arrange & Act
-        var context = new FunctionContext();
+        var context = new FunctionContext
+        {
+            FunctionId = "test.function",
+            CallId = "call-123",
+            GameId = "game-123",
+            Env = "dev"
+        };
 
         // Assert
-        context.FunctionId.Should().BeNull();
-        context.CallId.Should().BeNull();
-        context.GameId.Should().BeNull();
-        context.Env.Should().BeNull();
+        context.FunctionId.Should().Be("test.function");
+        context.CallId.Should().Be("call-123");
+        context.GameId.Should().Be("game-123");
+        context.Env.Should().Be("dev");
         context.UserId.Should().BeNull();
-        context.RequestId.Should().BeNull();
     }
 
     [Fact]
     public void FunctionContext_CanSetAllProperties()
     {
         // Arrange & Act
+        var timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         var context = new FunctionContext
         {
             FunctionId = "test.function",
@@ -208,8 +214,7 @@ public class EdgeCaseTests
             GameId = "game-123",
             Env = "production",
             UserId = "user-456",
-            RequestId = "req-789",
-            Timestamp = DateTime.UtcNow
+            Timestamp = timestamp
         };
 
         // Assert
@@ -218,18 +223,23 @@ public class EdgeCaseTests
         context.GameId.Should().Be("game-123");
         context.Env.Should().Be("production");
         context.UserId.Should().Be("user-456");
-        context.RequestId.Should().Be("req-789");
-        context.Timestamp.Should().NotBe(default);
+        context.Timestamp.Should().Be(timestamp);
     }
 
     [Fact]
     public void FunctionContext_Timestamp_DefaultsToMinValue()
     {
         // Arrange & Act
-        var context = new FunctionContext();
+        var context = new FunctionContext
+        {
+            FunctionId = "test.function",
+            CallId = "call-123",
+            GameId = "game-123",
+            Env = "dev"
+        };
 
         // Assert
-        context.Timestamp.Should().Be(default(DateTime));
+        context.Timestamp.Should().Be(0);
     }
 
     #endregion
@@ -281,19 +291,18 @@ public class EdgeCaseTests
     }
 
     [Fact]
-    public void BatchInvokeRequest_WithEmptyMetadata_IsAllowed()
+    public void BatchInvokeRequest_CanHaveIdempotencyKey()
     {
         // Arrange & Act
         var request = new BatchInvokeRequest
         {
             FunctionId = "test.func",
             Payload = "{}",
-            Metadata = new Dictionary<string, string>()
+            IdempotencyKey = "idemp-123"
         };
 
         // Assert
-        request.Metadata.Should().NotBeNull();
-        request.Metadata.Should().BeEmpty();
+        request.IdempotencyKey.Should().Be("idemp-123");
     }
 
     #endregion
@@ -304,11 +313,15 @@ public class EdgeCaseTests
     public void JobStatus_DefaultValues_AreCorrect()
     {
         // Arrange & Act
-        var status = new JobStatus();
+        var status = new JobStatus
+        {
+            JobId = "job-123",
+            Status = "pending"
+        };
 
         // Assert
-        status.JobId.Should().BeNull();
-        status.Status.Should().BeNull();
+        status.JobId.Should().Be("job-123");
+        status.Status.Should().Be("pending");
         status.Progress.Should().Be(0);
         status.Error.Should().BeNull();
         status.Result.Should().BeNull();
@@ -472,18 +485,20 @@ public class EdgeCaseTests
     }
 
     [Fact]
-    public void FunctionContext_Metadata_CanBeEmpty()
+    public void FunctionContext_CanHaveIdempotencyKey()
     {
         // Arrange & Act
         var context = new FunctionContext
         {
             FunctionId = "test.func",
-            Metadata = new Dictionary<string, string>()
+            CallId = "call-123",
+            GameId = "game-123",
+            Env = "dev",
+            IdempotencyKey = "idemp-456"
         };
 
         // Assert
-        context.Metadata.Should().NotBeNull();
-        context.Metadata.Should().BeEmpty();
+        context.IdempotencyKey.Should().Be("idemp-456");
     }
 
     #endregion
