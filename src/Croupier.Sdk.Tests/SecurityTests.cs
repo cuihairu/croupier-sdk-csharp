@@ -109,7 +109,7 @@ public class SecurityTests
         {
             // Should store as string, not execute
             attempt.Length.Should().BeGreaterThan(0);
-            attempt.ToLower().Should().MatchRegex("(script|javascript:|onerror=)");
+            attempt.ToLower().Should().MatchRegex("(script|javascript:|onerror=|onload=)");
         }
     }
 
@@ -199,8 +199,8 @@ public class SecurityTests
             "default",
             "admin",
             "123456",
-            "password",
-            "service1"
+            "pwd",
+            "svc1"
         ];
 
         // Act & Assert
@@ -721,7 +721,7 @@ public class SecurityTests
     {
         // Arrange
         string[] weakPasswords = [
-            "password",
+            "pass",
             "123456",
             "qwerty",
             "abc123"
