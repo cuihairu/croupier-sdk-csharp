@@ -31,6 +31,9 @@
 
     <!-- Test Ordering -->
     <PackageReference Include="Xunit.Priority" Version="1.1.6" />
+
+    <!-- NNG Transport (explicit reference for tests to ensure native libs are available) -->
+    <PackageReference Include="nng.NET" Version="1.4.0-rc0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -30,39 +30,88 @@ public class NNGTransportTests : IDisposable
     private NNGServer? _server;
     private NNGTransport? _client;
 
+    private static bool? _isNngAvailable;
+    private static readonly object _nngCheckLock = new();
+
     private static bool IsNNGAvailable()
     {
-        try
+        // Cache the result since this check is expensive
+        if (_isNngAvailable.HasValue)
         {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET.Shared")
-                ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
-                ?? assemblies.FirstOrDefault(a => a.GetName().Name.StartsWith("nng"));
+            return _isNngAvailable.Value;
+        }
 
-            if (assembly == null)
+        lock (_nngCheckLock)
+        {
+            // Double-check after acquiring lock
+            if (_isNngAvailable.HasValue)
             {
-                try
-                {
-                    assembly = Assembly.Load("nng.NET.Shared");
-                }
-                catch
+                return _isNngAvailable.Value;
+            }
+
+            try
+            {
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET.Shared")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name == "nng.NET")
+                    ?? assemblies.FirstOrDefault(a => a.GetName().Name != null && a.GetName().Name.StartsWith("nng"));
+
+                if (assembly == null)
                 {
                     try
                     {
-                        assembly = Assembly.Load("nng.NET");
+                        assembly = Assembly.Load("nng.NET.Shared");
                     }
                     catch
                     {
-                        return false;
+                        try
+                        {
+                            assembly = Assembly.Load("nng.NET");
+                        }
+                        catch
+                        {
+                            _isNngAvailable = false;
+                            return false;
+                        }
                     }
                 }
-            }
 
-            return assembly != null;
-        }
-        catch
-        {
-            return false;
+                if (assembly == null)
+                {
+                    _isNngAvailable = false;
+                    return false;
+                }
+
+                // Try to find and initialize the factory to verify native lib is available
+                var factoryType = assembly.GetType("nng.Native.NngFactory")
+                    ?? assembly.GetType("nng.NngFactory");
+
+                if (factoryType == null)
+                {
+                    _isNngAvailable = false;
+                    return false;
+                }
+
+                // Try to create a factory instance to verify native library actually works
+                var factoryMethod = factoryType.GetMethod("Create", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                    ?? factoryType.GetMethod("Init", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+                if (factoryMethod == null)
+                {
+                    _isNngAvailable = false;
+                    return false;
+                }
+
+                // Attempt to initialize - this will fail if native libs aren't available
+                var factory = factoryMethod.Invoke(null, null);
+                _isNngAvailable = factory != null;
+                return _isNngAvailable.Value;
+            }
+            catch
+            {
+                _isNngAvailable = false;
+                return false;
+            }
         }
     }
 
