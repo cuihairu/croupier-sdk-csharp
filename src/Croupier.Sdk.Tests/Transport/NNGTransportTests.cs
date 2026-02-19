@@ -33,7 +33,7 @@ public class NNGTransportTests : IDisposable
     private static bool? _isNngAvailable;
     private static readonly object _nngCheckLock = new();
 
-    private static bool IsNNGAvailable()
+    public static bool IsNNGAvailable()
     {
         // Cache the result since this check is expensive
         if (_isNngAvailable.HasValue)
