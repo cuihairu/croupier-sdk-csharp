@@ -33,12 +33,16 @@ public partial class CroupierClient : IDisposable
     private readonly ConcurrentDictionary<string, FunctionDescriptor> _descriptors;
     private readonly CancellationTokenSource _shutdownCts;
     private readonly Channel<FunctionCallTask> _callChannel;
+    private readonly Func<string, int, ICroupierLogger, IClientTransport> _transportFactory;
 
-    private NNGTransport? _transport;
+    private IClientTransport? _transport;
     private NNGServer? _server;
     private bool _isConnected;
     private bool _isDisposed;
     private Task? _processTask;
+    private CancellationTokenSource? _heartbeatCts;
+    private Task? _heartbeatTask;
+    private string _sessionId = string.Empty;
 
     /// <summary>
     /// 客户端配置
@@ -61,6 +65,17 @@ public partial class CroupierClient : IDisposable
     /// <param name="config">客户端配置</param>
     /// <param name="logger">日志记录器（可选）</param>
     public CroupierClient(ClientConfig? config = null, ICroupierLogger? logger = null)
+        : this(
+            config,
+            logger,
+            static (address, timeoutMs, transportLogger) => new NNGTransport(address, timeoutMs, transportLogger))
+    {
+    }
+
+    internal CroupierClient(
+        ClientConfig? config,
+        ICroupierLogger? logger,
+        Func<string, int, ICroupierLogger, IClientTransport> transportFactory)
     {
         _config = config ?? new ClientConfig();
         _logger = logger ?? new ConsoleCroupierLogger();
@@ -68,6 +83,7 @@ public partial class CroupierClient : IDisposable
         _descriptors = new ConcurrentDictionary<string, FunctionDescriptor>();
         _shutdownCts = new CancellationTokenSource();
         _callChannel = Channel.CreateUnbounded<FunctionCallTask>();
+        _transportFactory = transportFactory;
 
         _logger.LogInfo("CroupierClient", $"Client created for service: {_config.ServiceId}");
     }
@@ -78,7 +94,10 @@ public partial class CroupierClient : IDisposable
     /// <param name="config">客户端配置</param>
     /// <param name="logger">Microsoft ILogger</param>
     public CroupierClient(ClientConfig config, ILogger logger)
-        : this(config, new CroupierLogger(logger))
+        : this(
+            config,
+            new CroupierLogger(logger),
+            static (address, timeoutMs, transportLogger) => new NNGTransport(address, timeoutMs, transportLogger))
     {
     }
 
@@ -100,12 +119,7 @@ public partial class CroupierClient : IDisposable
 
         try
         {
-            // Create NNG transport
-            var address = _config.AgentAddr.StartsWith("tcp://") ? _config.AgentAddr : $"tcp://{_config.AgentAddr}";
-            _transport = new NNGTransport(address, _config.TimeoutSeconds * 1000, _logger);
-            _transport.Connect();
-
-            // TODO: Implement service registration via NNG
+            await ConnectAndRegisterAsync(cancellationToken);
 
             _isConnected = true;
             LocalAddress = _config.LocalAddr;
@@ -114,6 +128,7 @@ public partial class CroupierClient : IDisposable
 
             // Start message processing loop
             _processTask = Task.Run(() => ProcessCallsAsync(_shutdownCts.Token), cancellationToken);
+            StartHeartbeatLoop();
 
             await Task.CompletedTask;
         }
@@ -137,11 +152,13 @@ public partial class CroupierClient : IDisposable
         _logger.LogInfo("CroupierClient", "Disconnecting...");
 
         _shutdownCts.Cancel();
+        _heartbeatCts?.Cancel();
         _isConnected = false;
 
         try
         {
             _processTask?.Wait(TimeSpan.FromSeconds(5));
+            _heartbeatTask?.Wait(TimeSpan.FromSeconds(5));
         }
         catch (OperationCanceledException)
         {
@@ -152,6 +169,10 @@ public partial class CroupierClient : IDisposable
         _transport = null;
         _server?.Dispose();
         _server = null;
+        _heartbeatCts?.Dispose();
+        _heartbeatCts = null;
+        _heartbeatTask = null;
+        _sessionId = string.Empty;
 
         _logger.LogInfo("CroupierClient", "Disconnected");
     }
@@ -426,6 +447,143 @@ public partial class CroupierClient : IDisposable
     {
         if (_isDisposed)
             throw new ObjectDisposedException(nameof(CroupierClient));
+    }
+
+    private async Task ConnectAndRegisterAsync(CancellationToken cancellationToken)
+    {
+        var address = _config.AgentAddr.StartsWith("tcp://") ? _config.AgentAddr : $"tcp://{_config.AgentAddr}";
+        var transport = _transportFactory(address, _config.TimeoutSeconds * 1000, _logger);
+        transport.Connect();
+
+        try
+        {
+            var responseBytes = await transport.CallAsync(
+                Protocol.MsgRegisterLocalRequest,
+                BuildRegisterRequest().ToByteArray(),
+                cancellationToken);
+            var response = RegisterLocalResponse.Parser.ParseFrom(responseBytes);
+            if (string.IsNullOrWhiteSpace(response.SessionId))
+            {
+                throw new InvalidOperationException("RegisterLocal returned empty session_id");
+            }
+
+            _transport?.Dispose();
+            _transport = transport;
+            _sessionId = response.SessionId;
+        }
+        catch
+        {
+            transport.Dispose();
+            throw;
+        }
+    }
+
+    private RegisterLocalRequest BuildRegisterRequest()
+    {
+        var request = new RegisterLocalRequest
+        {
+            ServiceId = _config.ServiceId,
+            Version = _config.ServiceVersion,
+            RpcAddr = _config.LocalAddr
+        };
+
+        foreach (var descriptor in _descriptors.Values)
+        {
+            request.Functions.Add(new LocalFunctionDescriptor
+            {
+                Id = descriptor.GetFullName(),
+                Version = descriptor.Version,
+                Summary = descriptor.DisplayName ?? string.Empty,
+                Description = descriptor.Description ?? string.Empty,
+                InputSchema = descriptor.InputSchema ?? string.Empty,
+                OutputSchema = descriptor.OutputSchema ?? string.Empty
+            });
+        }
+
+        return request;
+    }
+
+    private void StartHeartbeatLoop()
+    {
+        _heartbeatCts?.Cancel();
+        _heartbeatCts?.Dispose();
+        _heartbeatCts = CancellationTokenSource.CreateLinkedTokenSource(_shutdownCts.Token);
+        _heartbeatTask = Task.Run(() => HeartbeatLoopAsync(_heartbeatCts.Token), _heartbeatCts.Token);
+    }
+
+    private async Task HeartbeatLoopAsync(CancellationToken cancellationToken)
+    {
+        var interval = TimeSpan.FromSeconds(Math.Max(_config.HeartbeatIntervalSeconds, 1));
+
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            try
+            {
+                await Task.Delay(interval, cancellationToken);
+                await SendHeartbeatAsync(cancellationToken);
+            }
+            catch (OperationCanceledException)
+            {
+                break;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning("CroupierClient", $"Heartbeat failed: {ex.Message}");
+                if (!_config.AutoReconnect)
+                {
+                    continue;
+                }
+
+                await ReconnectAsync(cancellationToken);
+            }
+        }
+    }
+
+    private async Task SendHeartbeatAsync(CancellationToken cancellationToken)
+    {
+        if (_transport == null || !_transport.IsConnected || string.IsNullOrWhiteSpace(_sessionId))
+        {
+            throw new InvalidOperationException("Not connected to Agent");
+        }
+
+        var request = new HeartbeatRequest
+        {
+            ServiceId = _config.ServiceId,
+            SessionId = _sessionId
+        };
+
+        await _transport.CallAsync(Protocol.MsgHeartbeatLocalRequest, request.ToByteArray(), cancellationToken);
+    }
+
+    private async Task ReconnectAsync(CancellationToken cancellationToken)
+    {
+        _transport?.Dispose();
+        _transport = null;
+        _isConnected = false;
+
+        var attempts = 0;
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            attempts++;
+            try
+            {
+                await ConnectAndRegisterAsync(cancellationToken);
+                _isConnected = true;
+                _logger.LogInfo("CroupierClient", $"Reconnected and re-registered service {_config.ServiceId}");
+                return;
+            }
+            catch (Exception ex) when (!cancellationToken.IsCancellationRequested)
+            {
+                _logger.LogWarning("CroupierClient", $"Reconnect attempt {attempts} failed: {ex.Message}");
+
+                if (_config.ReconnectMaxAttempts > 0 && attempts >= _config.ReconnectMaxAttempts)
+                {
+                    throw;
+                }
+
+                await Task.Delay(TimeSpan.FromSeconds(Math.Max(_config.ReconnectIntervalSeconds, 1)), cancellationToken);
+            }
+        }
     }
 
     /// <summary>

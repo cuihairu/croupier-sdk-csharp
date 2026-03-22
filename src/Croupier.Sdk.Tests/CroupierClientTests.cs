@@ -3,6 +3,8 @@
 
 using Croupier.Sdk.Logging;
 using Croupier.Sdk.Models;
+using Croupier.Sdk.Transport;
+using Croupier.Sdk.V1;
 using FluentAssertions;
 using Moq;
 using Xunit;
@@ -137,6 +139,35 @@ public class CroupierClientTests
             Env = "test",
             Insecure = true
         };
+    }
+
+    private sealed class FakeTransport : IClientTransport
+    {
+        private readonly Func<int, byte[]?, byte[]> _callHandler;
+
+        public FakeTransport(Func<int, byte[]?, byte[]> callHandler)
+        {
+            _callHandler = callHandler;
+        }
+
+        public bool IsConnected { get; private set; }
+        public int ConnectCount { get; private set; }
+
+        public void Connect()
+        {
+            ConnectCount++;
+            IsConnected = true;
+        }
+
+        public byte[] Call(int msgType, byte[]? data) => _callHandler(msgType, data);
+
+        public Task<byte[]> CallAsync(int msgType, byte[]? data, CancellationToken cancellationToken = default)
+            => Task.FromResult(_callHandler(msgType, data));
+
+        public void Dispose()
+        {
+            IsConnected = false;
+        }
     }
 
     #region Constructor Tests
@@ -318,6 +349,101 @@ public class CroupierClientTests
 
         // Assert
         action.Should().NotThrow();
+    }
+
+    [Fact]
+    public async Task CroupierClient_ConnectAsync_RegistersLocalFunctions()
+    {
+        // Arrange
+        RegisterLocalRequest? capturedRequest = null;
+        var transport = new FakeTransport((msgType, data) =>
+        {
+            msgType.Should().Be(Protocol.MsgRegisterLocalRequest);
+            capturedRequest = RegisterLocalRequest.Parser.ParseFrom(data);
+            return new RegisterLocalResponse { SessionId = "session-1" }.ToByteArray();
+        });
+
+        var client = new CroupierClient(
+            CreateTestConfig(),
+            new ConsoleCroupierLogger(),
+            (_, _, _) => transport);
+        client.RegisterFunction(
+            new FunctionDescriptor
+            {
+                Id = "get",
+                Category = "player",
+                Operation = "get",
+                Description = "Get player",
+                InputSchema = "{\"type\":\"object\"}",
+                OutputSchema = "{\"type\":\"object\"}"
+            },
+            (ctx, payload) => Task.FromResult("{}"));
+
+        // Act
+        await client.ConnectAsync();
+
+        // Assert
+        transport.ConnectCount.Should().Be(1);
+        capturedRequest.Should().NotBeNull();
+        capturedRequest!.ServiceId.Should().Be("test-service");
+        capturedRequest.RpcAddr.Should().Be("0.0.0.0:0");
+        capturedRequest.Functions.Should().ContainSingle();
+        capturedRequest.Functions[0].Id.Should().Be("player.get");
+        client.IsConnected.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task CroupierClient_HeartbeatFailure_ReconnectsAndReRegisters()
+    {
+        // Arrange
+        var registerCount = 0;
+        var heartbeatCount = 0;
+        var config = CreateTestConfig();
+        config.HeartbeatIntervalSeconds = 1;
+        config.ReconnectIntervalSeconds = 1;
+
+        var client = new CroupierClient(
+            config,
+            new ConsoleCroupierLogger(),
+            (_, _, _) => new FakeTransport((msgType, data) =>
+            {
+                if (msgType == Protocol.MsgRegisterLocalRequest)
+                {
+                    registerCount++;
+                    return new RegisterLocalResponse { SessionId = $"session-{registerCount}" }.ToByteArray();
+                }
+
+                if (msgType == Protocol.MsgHeartbeatLocalRequest)
+                {
+                    heartbeatCount++;
+                    if (heartbeatCount == 1)
+                    {
+                        throw new InvalidOperationException("heartbeat failed");
+                    }
+
+                    var heartbeat = HeartbeatRequest.Parser.ParseFrom(data);
+                    heartbeat.SessionId.Should().Be("session-2");
+                    return Array.Empty<byte>();
+                }
+
+                throw new InvalidOperationException($"Unexpected msgType: {msgType}");
+            }));
+        client.RegisterFunction(
+            new FunctionDescriptor
+            {
+                Id = "get",
+                Category = "player",
+                Operation = "get"
+            },
+            (ctx, payload) => Task.FromResult("{}"));
+
+        // Act
+        await client.ConnectAsync();
+        await Task.Delay(TimeSpan.FromSeconds(3.5));
+
+        // Assert
+        registerCount.Should().BeGreaterThanOrEqualTo(2);
+        client.IsConnected.Should().BeTrue();
     }
 
     #endregion

@@ -20,7 +20,7 @@ namespace Croupier.Sdk.Transport;
 /// NNG-based transport client using REQ/REP pattern.
 /// Uses nng.NET library for NNG communication.
 /// </summary>
-public sealed class NNGTransport : IDisposable
+public sealed class NNGTransport : IClientTransport
 {
     private readonly string _address;
     private readonly int _timeoutMs;
